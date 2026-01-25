@@ -23,14 +23,13 @@ export function Header() {
         <Link href="/" className="logo group">
           <span key={pathname} className="logo-text">
             {logoLetters.map((char, i) => (
-              <span
-                key={i}
-                className="logo-letter"
-                style={{ animationDelay: `${i * 40}ms` }}
-              >
-                {char}
-              </span>
-            ))}
+                <span
+                  key={i}
+                  className={`logo-letter logo-letter-${i}`}
+                >
+                  {char}
+                </span>
+              ))}
           </span>
         </Link>
 
