@@ -174,3 +174,47 @@
     animation-delay: 400ms;
   }
 }
+
+/* Mobile-first design overrides */
+@layer components {
+  /* Mobile typography scale */
+  @media (max-width: 768px) {
+    .text-display {
+      @apply text-3xl;
+    }
+    
+    .text-headline {
+      @apply text-2xl;
+    }
+    
+    .text-title {
+      @apply text-xl;
+    }
+    
+    /* Logo: no underline animation on mobile */
+    .logo-text::after {
+      display: none;
+    }
+    
+    .logo:hover .logo-text {
+      letter-spacing: -0.01em;
+    }
+    
+    /* Reduce motion on mobile */
+    .logo-letter {
+      animation-duration: 0.25s;
+    }
+    
+    /* Section spacing mobile */
+    .section {
+      @apply py-12;
+    }
+    
+    /* Container padding mobile */
+    .container-narrow,
+    .container-content,
+    .container-wide {
+      @apply px-5;
+    }
+  }
+}
