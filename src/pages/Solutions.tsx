@@ -20,7 +20,7 @@ const Solutions = () => (
     </section>
 
     <section className="py-20 px-6">
-      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
         {solutions.map((s, i) => (
           <motion.div
             key={s.title}

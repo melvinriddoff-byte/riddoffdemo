@@ -4,13 +4,18 @@ import { Button } from "@/components/ui/button";
 import DashboardSlider from "@/components/DashboardSlider";
 import Testimonials from "@/components/Testimonials";
 import { ArrowRight, Zap, Shield, BarChart3, Users } from "lucide-react";
+import heroImg from "@/components/assets/hero.png";
 
 const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="relative py-24 md:py-36 px-6 overflow-hidden bg-gradient-hero">
-        <div className="container mx-auto max-w-4xl text-center">
+      <section
+        className="relative py-24 md:py-36 px-6 overflow-hidden"
+        style={{ backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
+        <div className="relative container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,7 +68,7 @@ const Index = () => {
       {/* Features row */}
       <section className="py-20 px-6 bg-card">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[
               { icon: Zap, title: "Intelligent Automation", desc: "AI-driven workflows that adapt to your business processes." },
               { icon: Shield, title: "Enterprise Security", desc: "SOC2 compliant with end-to-end encryption." },

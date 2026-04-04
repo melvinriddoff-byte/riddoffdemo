@@ -304,7 +304,11 @@ const ManufacturingModule = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <FinanceDashboardMockup />
+          <div className="overflow-x-auto">
+              <div className="min-w-[700px]">
+                <FinanceDashboardMockup />
+              </div>
+            </div>
         </motion.div>
       </div>
     </section>

@@ -38,7 +38,7 @@ const Company = () => (
 
     {/* Sections */}
     <section className="py-20 px-6">
-      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         {sections.map((item, i) => (
           <motion.div
             key={item.title}

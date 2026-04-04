@@ -14,6 +14,17 @@ const tabs = [
 const DashboardSlider = () => {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [zoom, setZoom] = useState(0.52);
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setZoom(w < 480 ? 0.28 : w < 768 ? 0.38 : w < 1024 ? 0.44 : 0.52);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,7 +79,7 @@ const DashboardSlider = () => {
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
             {/* CSS zoom shrinks both layout and visual size — content fits naturally */}
-            <div style={{ zoom: 0.52 }}>
+            <div style={{ zoom }}>
               <Component />
             </div>
           </motion.div>

@@ -234,7 +234,11 @@ const Procurement = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <ProcurementDashboardMockup />
+          <div className="overflow-x-auto">
+              <div className="min-w-[700px]">
+                <ProcurementDashboardMockup />
+              </div>
+            </div>
         </motion.div>
       </div>
     </section>

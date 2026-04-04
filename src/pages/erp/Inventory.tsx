@@ -232,7 +232,11 @@ const Inventory = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <InventoryDashboardMockup />
+          <div className="overflow-x-auto">
+              <div className="min-w-[700px]">
+                <InventoryDashboardMockup />
+              </div>
+            </div>
         </motion.div>
       </div>
     </section>

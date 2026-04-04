@@ -33,7 +33,7 @@ const Contact = () => {
 
       {/* Main content */}
       <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12">
 
           {/* Contact form */}
           <motion.div
@@ -43,7 +43,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2"
           >
-            <div className="bg-muted/40 rounded-2xl p-8 md:p-10 border border-border">
+            <div className="bg-muted/40 rounded-2xl p-4 sm:p-8 md:p-10 border border-border">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

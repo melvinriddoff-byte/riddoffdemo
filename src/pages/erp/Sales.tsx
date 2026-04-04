@@ -111,7 +111,7 @@ const SalesDashboardMockup = () => (
       {/* Main */}
       <div className="flex-1 p-5 bg-gray-50/50">
         {/* Stat cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 mb-5">
           {[
             { label: "Active Sessions", val: "0", sub: "Currently in progress", icon: Play, iconBg: "bg-green-100", iconColor: "text-green-600" },
             { label: "Today's Sessions", val: "0", sub: "Started Today", icon: Calendar, iconBg: "bg-blue-100", iconColor: "text-blue-600" },
@@ -215,7 +215,11 @@ const Sales = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <SalesDashboardMockup />
+          <div className="overflow-x-auto">
+            <div className="min-w-[700px]">
+              <SalesDashboardMockup />
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

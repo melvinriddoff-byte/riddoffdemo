@@ -305,7 +305,11 @@ const Reports = () => (
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-14 -mx-6 md:-mx-16 lg:-mx-32 xl:-mx-48"
         >
-          <ReportsDashboardMockup />
+          <div className="overflow-x-auto">
+              <div className="min-w-[700px]">
+                <ReportsDashboardMockup />
+              </div>
+            </div>
         </motion.div>
       </div>
     </section>

@@ -94,7 +94,7 @@ const DeckCard = ({
       dragElastic={0.9}
       onDragEnd={handleDragEnd}
       whileDrag={{ cursor: "grabbing" }}
-      className="w-[340px] md:w-[420px] bg-card border border-border rounded-2xl p-8 flex flex-col gap-5 shadow-lg select-none"
+      className="w-[min(90vw,340px)] md:w-[420px] bg-card border border-border rounded-2xl p-6 sm:p-8 flex flex-col gap-5 shadow-lg select-none"
     >
       {/* Stars */}
       <div className="flex text-amber-400 gap-1">
@@ -165,11 +165,11 @@ const Testimonials = () => {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24 justify-center">
+        <div className="flex flex-col md:flex-row items-center gap-10 md:gap-24 justify-center">
           {/* Card deck */}
           <div
             className="relative flex-shrink-0"
-            style={{ width: 340, height: 320 }}
+            style={{ width: "min(90vw, 340px)", height: 320 }}
           >
             {cards.map((t, i) => (
               <DeckCard
