@@ -1,0 +1,108 @@
+@import url('https://fonts.cdnfonts.com/css/branch');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=melodrama@500&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* #ffffff */
+    --background: 0 0% 100%;
+    /* #012a4a */
+    --foreground: 206 97% 15%;
+
+    /* very light blue tint */
+    --card: 205 60% 97%;
+    --card-foreground: 206 97% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 206 97% 15%;
+
+    /* #01497c */
+    --primary: 205 98% 24%;
+    --primary-foreground: 0 0% 100%;
+
+    /* #012a4a */
+    --secondary: 206 97% 15%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 205 40% 93%;
+    --muted-foreground: 205 40% 42%;
+
+    /* #013a63 */
+    --accent: 205 98% 20%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 205 30% 85%;
+    --input: 205 30% 85%;
+    --ring: 205 98% 24%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 206 97% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 205 98% 24%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 98% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 205 50% 22%;
+    --sidebar-ring: 205 98% 24%;
+
+    --font-display: 'Branch', serif;
+    --font-body: 'Satoshi', sans-serif;
+
+    --gradient-primary: linear-gradient(135deg, hsl(206, 97%, 15%), hsl(205, 98%, 24%));
+    --gradient-accent: linear-gradient(135deg, hsl(205, 98%, 24%), hsl(205, 98%, 20%));
+    --gradient-hero: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(205, 60%, 97%) 100%);
+    --shadow-card: 0 4px 24px -4px hsl(206 97% 15% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(206 97% 15% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+
+  .bg-gradient-accent {
+    background-image: var(--gradient-accent);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+}
