@@ -4,18 +4,12 @@ import { Button } from "@/components/ui/button";
 import DashboardSlider from "@/components/DashboardSlider";
 import Testimonials from "@/components/Testimonials";
 import { ArrowRight, Zap, Shield, BarChart3, Users } from "lucide-react";
-import heroImg from "@/components/assets/hero.png";
-
 const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section
-        className="relative py-24 md:py-36 px-6 overflow-hidden"
-        style={{ backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <div className="absolute inset-0 bg-background/70 backdrop-blur-[2px]" />
-        <div className="relative container mx-auto max-w-4xl text-center">
+      <section className="relative py-24 md:py-36 px-6 overflow-hidden bg-gradient-hero">
+        <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
