@@ -31,10 +31,10 @@ const industries = [
 const Industries = () => (
   <div>
     {/* Hero */}
-    <section className="py-24 md:py-32 px-6 bg-gradient-hero">
+    <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
       <div className="container mx-auto max-w-3xl text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <h1 className="font-melodrama text-4xl md:text-6xl font-extrabold text-foreground mb-6">Industries</h1>
+          <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">Industries</h1>
           <p className="font-satoshi text-lg text-muted-foreground">
             Where our software runs businesses, not just interfaces.
           </p>
@@ -43,7 +43,7 @@ const Industries = () => (
     </section>
 
     {/* Industry cards */}
-    <section className="py-20 px-6">
+    <section className="py-12 sm:py-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
         {industries.map((item, i) => (
           <motion.div
@@ -52,7 +52,7 @@ const Industries = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="bg-card rounded-2xl p-8 shadow-card border border-border hover:shadow-elevated transition-all duration-300"
+            className="bg-card rounded-2xl p-5 sm:p-8 shadow-card border border-border hover:shadow-elevated transition-all duration-300"
           >
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
               <item.icon className="text-primary" size={28} />

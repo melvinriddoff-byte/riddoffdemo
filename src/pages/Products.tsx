@@ -45,17 +45,17 @@ const Products = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="py-24 md:py-32 px-6 bg-gradient-hero">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
         <div className="container mx-auto max-w-3xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-melodrama text-4xl md:text-6xl font-extrabold text-foreground mb-6">
+            <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">
               Products
             </h1>
-            <p className="font-satoshi text-lg text-muted-foreground leading-relaxed">
+            <p className="font-satoshi text-base sm:text-lg text-muted-foreground leading-relaxed">
               Operational platforms designed to handle real-world complexity.
             </p>
           </motion.div>
@@ -63,7 +63,7 @@ const Products = () => {
       </section>
 
       {/* Product cards */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-4xl space-y-8 md:space-y-16">
           {products.map((p, i) => (
             <motion.div

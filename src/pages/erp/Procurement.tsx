@@ -213,12 +213,12 @@ const ProcurementDashboardMockup = () => (
 
 const Procurement = () => (
   <div>
-    <section className="py-24 md:py-32 px-6 bg-gradient-hero">
+    <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
       <div className="container mx-auto max-w-3xl text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-satoshi font-medium mb-6">Rabos ERP — Module</span>
-          <h1 className="font-melodrama text-4xl md:text-6xl font-extrabold text-foreground mb-6">Procurement</h1>
-          <p className="font-satoshi text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs sm:text-sm font-satoshi font-medium mb-4 sm:mb-6">Rabos ERP — Module</span>
+          <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">Procurement</h1>
+          <p className="font-satoshi text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
             Streamline every step of your purchasing process — from requisition to receipt — with full control over spend and supplier relationships.
           </p>
         </motion.div>
@@ -226,7 +226,7 @@ const Procurement = () => (
     </section>
 
     {/* Dashboard Mockup */}
-    <section className="py-10 px-6 -mt-4">
+    <section className="py-6 sm:py-10 px-3 sm:px-6 -mt-2 sm:-mt-4">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -244,14 +244,14 @@ const Procurement = () => (
     </section>
 
     {/* Workflow Section */}
-    <section className="py-24 px-6 bg-gradient-to-b from-gray-50/0 to-gray-50/50">
+    <section className="py-14 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-gray-50/0 to-gray-50/50">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-20">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="inline-block px-4 py-1.5 rounded-full border border-border bg-white text-sm font-satoshi font-medium mb-4 text-muted-foreground shadow-sm">
               Process
             </span>
-            <h2 className="font-melodrama text-3xl md:text-5xl font-bold text-foreground mb-5">Procurement Workflow</h2>
+            <h2 className="font-melodrama text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-5">Procurement Workflow</h2>
             <p className="font-satoshi text-lg text-muted-foreground max-w-2xl mx-auto">
               A structured and automated pipeline designed to control your purchasing from requisition to receipt.
             </p>
@@ -281,30 +281,30 @@ const Procurement = () => (
 
                   {/* Left Side Content */}
                   <div className={`flex-1 w-full md:w-1/2 ${isEven ? 'md:pr-16 md:text-right' : 'md:hidden'}`}>
-                    <div className="bg-card p-8 rounded-3xl shadow-card border border-border hover:shadow-elevated transition-all duration-300 relative z-20">
+                    <div className="bg-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card border border-border hover:shadow-elevated transition-all duration-300 relative z-20">
                       <div className="md:hidden w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
                         <step.icon className="text-primary" size={24} />
                       </div>
                       <div className={`flex items-center gap-3 mb-4 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
                         {!isEven && <span className="text-sm font-bold text-primary/50">0{i + 1}</span>}
-                        <h3 className="font-melodrama text-2xl font-bold text-foreground">{step.title}</h3>
+                        <h3 className="font-melodrama text-lg sm:text-2xl font-bold text-foreground">{step.title}</h3>
                         {isEven && <span className="text-sm font-bold text-primary/50">0{i + 1}</span>}
                       </div>
-                      <p className="font-satoshi text-muted-foreground leading-relaxed">{step.desc}</p>
+                      <p className="font-satoshi text-sm sm:text-base text-muted-foreground leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
 
                   {/* Right Side Content */}
                   <div className={`flex-1 w-full md:w-1/2 ${!isEven ? 'md:pl-16 text-left' : 'md:hidden'}`}>
-                    <div className="bg-card p-8 rounded-3xl shadow-card border border-border hover:shadow-elevated transition-all duration-300 relative z-20">
+                    <div className="bg-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card border border-border hover:shadow-elevated transition-all duration-300 relative z-20">
                       <div className="md:hidden w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
                         <step.icon className="text-primary" size={24} />
                       </div>
                       <div className={`flex items-center gap-3 mb-4`}>
                         <span className="text-sm font-bold text-primary/50">0{i + 1}</span>
-                        <h3 className="font-melodrama text-2xl font-bold text-foreground">{step.title}</h3>
+                        <h3 className="font-melodrama text-lg sm:text-2xl font-bold text-foreground">{step.title}</h3>
                       </div>
-                      <p className="font-satoshi text-muted-foreground leading-relaxed">{step.desc}</p>
+                      <p className="font-satoshi text-sm sm:text-base text-muted-foreground leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 </motion.div>

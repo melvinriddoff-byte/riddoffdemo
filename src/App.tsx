@@ -13,6 +13,7 @@ import Industries from "./pages/Industries";
 import Company from "./pages/Company";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ResponsiveEngine from "./pages/ResponsiveEngine";
 import Sales from "./pages/erp/Sales";
 import CRM from "./pages/erp/CRM";
 import Procurement from "./pages/erp/Procurement";
@@ -50,6 +51,7 @@ const App = () => (
             <Route path="/industries" element={<Industries />} />
             <Route path="/company" element={<Company />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/responsive-engine" element={<ResponsiveEngine />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

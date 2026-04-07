@@ -165,10 +165,10 @@ const Navbar = () => {
 };
 
 const Footer = () => (
-  <footer className="bg-secondary text-secondary-foreground py-16">
-    <div className="container mx-auto px-6">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-x-4 gap-y-6">
-        <div className="col-span-2 md:col-span-1">
+  <footer className="bg-secondary text-secondary-foreground py-10 sm:py-16">
+    <div className="container mx-auto px-4 sm:px-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-8">
+        <div className="col-span-2 sm:col-span-3 md:col-span-1">
           <h3 className="font-melodrama text-xl font-bold mb-4">Riddoff</h3>
           <p className="text-secondary-foreground/70 text-sm leading-relaxed">
             Enterprise automation that runs<br />businesses, not just interfaces.
@@ -220,7 +220,7 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <div className="font-melodrama border-t border-secondary-foreground/10 mt-12 pt-8 text-center text-sm text-secondary-foreground/50">
+      <div className="font-melodrama border-t border-secondary-foreground/10 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-secondary-foreground/50">
         © 2026 Riddoff. All rights reserved.
       </div>
     </div>

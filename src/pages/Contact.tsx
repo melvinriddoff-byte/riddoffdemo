@@ -22,17 +22,17 @@ const Contact = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="py-24 md:py-32 px-6 bg-gradient-hero">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
         <div className="container mx-auto max-w-3xl text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="font-melodrama text-4xl md:text-6xl font-extrabold text-foreground mb-6">Contact</h1>
+            <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">Contact</h1>
             <p className="text-lg text-muted-foreground font-satoshi">Let's discuss how Riddoff can transform your operations.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Main content */}
-      <section className="py-20 px-6">
+      <section className="py-12 sm:py-20 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12">
 
           {/* Contact form */}
