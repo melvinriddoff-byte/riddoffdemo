@@ -1,6 +1,6 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, ArrowUp } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -227,6 +227,35 @@ const Footer = () => (
   </footer>
 );
 
+const ScrollToTop = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.2 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-50 w-10 h-10 sm:w-11 sm:h-11 bg-secondary text-white flex items-center justify-center rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp size={18} className="sm:hidden" />
+          <ArrowUp size={20} className="hidden sm:block" />
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+};
+
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -235,6 +264,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         {children}
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };
