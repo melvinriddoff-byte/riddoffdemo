@@ -78,8 +78,8 @@ const DashboardSlider = () => {
             exit="exit"
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            {/* CSS zoom shrinks both layout and visual size — content fits naturally */}
-            <div style={{ zoom }}>
+            {/* CSS zoom shrinks both layout and visual size — fixed height clips all dashboards to the same size */}
+            <div style={{ zoom, height: 480, overflow: "hidden" }}>
               <Component />
             </div>
           </motion.div>
