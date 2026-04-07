@@ -43,17 +43,17 @@ const SalesDashboardMockup = () => (
           <p className="text-[11px] text-muted-foreground">Track customer visits and sales performance</p>
         </div>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap justify-end">
         <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-green-200 bg-green-50 text-green-700 text-xs font-medium">
           <Play size={11} /> Active Sessions <span className="bg-green-600 text-white rounded-full px-1.5 text-[10px]">1</span>
         </button>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs font-medium">
+        <button className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs font-medium">
           <Clock size={11} /> Session History
         </button>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs font-medium">
+        <button className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs font-medium">
           <BarChart3 size={11} /> Analytics
         </button>
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600 text-xs ml-2">
+        <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600 text-xs ml-2">
           <Calendar size={11} /> 1 – 28 Feb
         </div>
         <Search size={15} className="text-gray-400 ml-1" />
@@ -111,7 +111,7 @@ const SalesDashboardMockup = () => (
       {/* Main */}
       <div className="flex-1 p-5 bg-gray-50/50">
         {/* Stat cards */}
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 mb-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
           {[
             { label: "Active Sessions", val: "0", sub: "Currently in progress", icon: Play, iconBg: "bg-green-100", iconColor: "text-green-600" },
             { label: "Today's Sessions", val: "0", sub: "Started Today", icon: Calendar, iconBg: "bg-blue-100", iconColor: "text-blue-600" },
@@ -215,11 +215,7 @@ const Sales = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="overflow-x-auto">
-            <div className="min-w-[700px]">
-              <SalesDashboardMockup />
-            </div>
-          </div>
+          <SalesDashboardMockup />
         </motion.div>
       </div>
     </section>

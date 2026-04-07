@@ -106,7 +106,7 @@ const FinanceDashboardMockup = () => (
       {/* Main */}
       <div className="flex-1 p-4 bg-gray-50/30 overflow-hidden">
         {/* Stat cards */}
-        <div className="grid grid-cols-4 gap-3 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
           {[
             { label: "Revenue (YTD)", sub: "Total Revenue", val: "INR 355K", footer: "vs last year", footerVal: "0%", iconBg: "bg-green-50", iconColor: "#166534", badge: null },
             { label: "Receivables", sub: "Outstanding", val: "INR 32K", footer: "Overdue", footerVal: "8K", iconBg: "bg-amber-50", iconColor: "#d97706", badge: "bg-amber-100 text-amber-700" },
@@ -135,9 +135,9 @@ const FinanceDashboardMockup = () => (
         </div>
 
         {/* Charts row 1 */}
-        <div className="grid grid-cols-3 gap-3 mb-3">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-3">
           {/* Cash Flow Trend — 2 cols */}
-          <div className="col-span-2 bg-white rounded-xl border border-gray-100 p-4">
+          <div className="col-span-1 md:col-span-2 bg-white rounded-xl border border-gray-100 p-4">
             <div className="flex items-start justify-between mb-2">
               <div>
                 <p className="text-xs font-bold text-foreground">Cash Flow Trend</p>
@@ -195,7 +195,7 @@ const FinanceDashboardMockup = () => (
         </div>
 
         {/* Charts row 2 */}
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {/* Gross Margin */}
           <div className="bg-white rounded-xl border border-gray-100 p-3">
             <div className="flex items-center gap-2 mb-2">
@@ -304,11 +304,7 @@ const ManufacturingModule = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="overflow-x-auto">
-              <div className="min-w-[700px]">
-                <FinanceDashboardMockup />
-              </div>
-            </div>
+          <FinanceDashboardMockup />
         </motion.div>
       </div>
     </section>

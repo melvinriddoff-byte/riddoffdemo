@@ -114,8 +114,8 @@ const CRMDashboardMockup = () => (
       {/* Main */}
       <div className="flex-1 p-5 bg-gray-50/40 overflow-hidden">
         {/* Top stat row */}
-        <div className="grid grid-cols-5 gap-3 mb-4">
-          <div className="bg-white rounded-xl p-4 border border-gray-100 col-span-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-4">
+          <div className="bg-white rounded-xl p-4 border border-gray-100 col-span-1 sm:col-span-1">
             <p className="text-2xl font-bold text-foreground">36</p>
             <p className="text-[11px] text-green-600 flex items-center gap-0.5 mt-1"><TrendingUp size={10} /> +5.2% vs last period</p>
           </div>
@@ -143,7 +143,7 @@ const CRMDashboardMockup = () => (
         </div>
 
         {/* Charts row */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           {/* Payroll chart */}
           <div className="bg-white rounded-xl border border-gray-100 p-4">
             <div className="flex items-start justify-between mb-1">
@@ -219,7 +219,7 @@ const CRMDashboardMockup = () => (
         </div>
 
         {/* Bottom row */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Employment Status */}
           <div className="bg-white rounded-xl border border-gray-100 p-5">
             <p className="text-sm font-bold text-foreground mb-4">Employment Status</p>
@@ -302,11 +302,7 @@ const CRM = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="overflow-x-auto">
-              <div className="min-w-[700px]">
-                <CRMDashboardMockup />
-              </div>
-            </div>
+          <CRMDashboardMockup />
         </motion.div>
       </div>
     </section>

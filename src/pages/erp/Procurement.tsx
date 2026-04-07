@@ -145,7 +145,8 @@ const ProcurementDashboardMockup = () => (
 
         {/* Table */}
         <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
-          <table className="w-full">
+          <div className="overflow-x-auto">
+          <table className="w-full min-w-[600px]">
             <thead>
               <tr className="bg-green-50/60 border-b border-gray-100">
                 <th className="w-10 px-4 py-3">
@@ -184,9 +185,10 @@ const ProcurementDashboardMockup = () => (
               ))}
             </tbody>
           </table>
+          </div>
 
           {/* Pagination */}
-          <div className="flex items-center justify-between px-5 py-3 border-t border-gray-100">
+          <div className="flex items-center justify-between px-5 py-3 border-t border-gray-100 flex-wrap gap-2">
             <p className="text-xs text-muted-foreground">Showing 1 to 2 of 2 orders</p>
             <div className="flex items-center gap-3">
               <button className="flex items-center gap-1 bg-green-50 border border-green-200 text-green-800 px-2.5 py-1 rounded-lg text-xs font-medium">
@@ -234,11 +236,7 @@ const Procurement = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="overflow-x-auto">
-              <div className="min-w-[700px]">
-                <ProcurementDashboardMockup />
-              </div>
-            </div>
+          <ProcurementDashboardMockup />
         </motion.div>
       </div>
     </section>

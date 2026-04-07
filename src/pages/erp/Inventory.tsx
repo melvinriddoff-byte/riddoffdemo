@@ -173,7 +173,8 @@ const InventoryDashboardMockup = () => (
 
         {/* Table */}
         <div className="bg-white rounded-xl border border-gray-100 overflow-hidden">
-          <table className="w-full">
+          <div className="overflow-x-auto">
+          <table className="w-full min-w-[700px]">
             <thead>
               <tr className="bg-green-50/50 border-b border-gray-100">
                 {["SKU", "PRODUCT", "CATEGORY", "SUPPLIER", "BIN", "COST", "PRICE", "MRP", "STOCK", "STATUS"].map((col) => (
@@ -201,6 +202,7 @@ const InventoryDashboardMockup = () => (
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>
@@ -232,11 +234,7 @@ const Inventory = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <div className="overflow-x-auto">
-              <div className="min-w-[700px]">
-                <InventoryDashboardMockup />
-              </div>
-            </div>
+          <InventoryDashboardMockup />
         </motion.div>
       </div>
     </section>
