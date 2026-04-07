@@ -14,12 +14,12 @@ const tabs = [
 const DashboardSlider = () => {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [zoom, setZoom] = useState(0.52);
+  const [zoom, setZoom] = useState(0.75);
 
   useEffect(() => {
     const update = () => {
       const w = window.innerWidth;
-      setZoom(w < 480 ? 0.28 : w < 768 ? 0.38 : w < 1024 ? 0.44 : 0.52);
+      setZoom(w < 480 ? 0.28 : w < 768 ? 0.38 : w < 1024 ? 0.44 : w < 1280 ? 0.75 : 0.88);
     };
     update();
     window.addEventListener("resize", update);
@@ -48,7 +48,7 @@ const DashboardSlider = () => {
   const { Component } = tabs[active];
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-7xl mx-auto">
       {/* Tab bar */}
       <div className="flex justify-center gap-2 mb-8">
         {tabs.map((t, i) => (
