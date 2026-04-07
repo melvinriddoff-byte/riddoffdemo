@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ShoppingCart, Users, ClipboardList, Package, Factory, Calculator, BarChart3, UserCheck, ListTodo } from "lucide-react";
 import { SalesDashboardMockup } from "@/pages/erp/Sales";
+import DashboardFrame from "@/components/DashboardFrame";
 
 const modules = [
   { icon: ShoppingCart, title: "Sales", desc: "Manage orders, invoices, and customer transactions with ease.", href: "/products/riddoff-erp/sales" },
@@ -49,11 +50,9 @@ const RiddoffERP = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="overflow-x-auto rounded-2xl">
-              <div className="min-w-[680px]">
-                <SalesDashboardMockup />
-              </div>
-            </div>
+            <DashboardFrame naturalWidth={900}>
+              <SalesDashboardMockup />
+            </DashboardFrame>
           </motion.div>
         </div>
       </section>

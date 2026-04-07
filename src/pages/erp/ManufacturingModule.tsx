@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Factory, Layers, Wrench, ShieldCheck, Calendar, Gauge, ChevronDown, Search, Bell, Settings } from "lucide-react";
+import DashboardFrame from "@/components/DashboardFrame";
 import { AreaChart, Area, BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, ResponsiveContainer, Tooltip } from "recharts";
 
 const features = [
@@ -304,7 +305,9 @@ const ManufacturingModule = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <FinanceDashboardMockup />
+          <DashboardFrame naturalWidth={900}>
+            <FinanceDashboardMockup />
+          </DashboardFrame>
         </motion.div>
       </div>
     </section>

@@ -5,6 +5,7 @@ import {
   Search, Calendar, RefreshCw, ChevronDown, Eye, Filter, Plus,
   Minus, Send, AlertTriangle,
 } from "lucide-react";
+import DashboardFrame from "@/components/DashboardFrame";
 
 const steps = [
   {
@@ -307,7 +308,9 @@ const Reports = () => (
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-14 -mx-6 md:-mx-16 lg:-mx-32 xl:-mx-48"
         >
-          <ReportsDashboardMockup />
+          <DashboardFrame naturalWidth={900}>
+            <ReportsDashboardMockup />
+          </DashboardFrame>
         </motion.div>
       </div>
     </section>

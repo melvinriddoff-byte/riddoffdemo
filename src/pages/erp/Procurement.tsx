@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ClipboardList, Truck, CheckSquare, DollarSign, Building2, ReceiptText, Search, Bell, Settings, ChevronDown, MoreVertical, ChevronLeft, ChevronRight, Calendar } from "lucide-react";
+import DashboardFrame from "@/components/DashboardFrame";
 
 const features = [
   { icon: ClipboardList, title: "Purchase Orders", desc: "Raise and send formal purchase orders to vendors, track approval status, and link each order to the goods or services expected in return." },
@@ -236,7 +237,9 @@ const Procurement = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <ProcurementDashboardMockup />
+          <DashboardFrame naturalWidth={900}>
+            <ProcurementDashboardMockup />
+          </DashboardFrame>
         </motion.div>
       </div>
     </section>

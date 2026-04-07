@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Package, Warehouse, ScanBarcode, TrendingDown, Bell, RefreshCw, Search, ChevronDown, MoreVertical, Download, BarChart2, UserPlus, Plus, Filter } from "lucide-react";
+import DashboardFrame from "@/components/DashboardFrame";
 
 const features = [
   { icon: Package, title: "Management", desc: "View and control your complete stock position in real time — current quantities, valuations, reorder levels, and movement history across all locations." },
@@ -234,7 +235,9 @@ const Inventory = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <InventoryDashboardMockup />
+          <DashboardFrame naturalWidth={900}>
+            <InventoryDashboardMockup />
+          </DashboardFrame>
         </motion.div>
       </div>
     </section>

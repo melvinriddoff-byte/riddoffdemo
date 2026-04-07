@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ShoppingCart, FileText, TrendingUp, Tag, BarChart2, Globe, Play, Clock, BarChart3, Calendar, ClipboardCheck, ScanBarcode, Eye, RefreshCw, Search, ChevronDown } from "lucide-react";
+import DashboardFrame from "@/components/DashboardFrame";
 
 const features = [
   { icon: ShoppingCart, title: "Sessions", desc: "Open and close register sessions, track daily cash flow, and reconcile drawer totals at shift end." },
@@ -215,7 +216,9 @@ const Sales = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <SalesDashboardMockup />
+          <DashboardFrame naturalWidth={900}>
+            <SalesDashboardMockup />
+          </DashboardFrame>
         </motion.div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, Target, PhoneCall, Mail, Clock, Star, Calendar, Search, Settings, Bell, RefreshCw, UserPlus, ChevronDown, TrendingUp, TrendingDown } from "lucide-react";
+import DashboardFrame from "@/components/DashboardFrame";
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const features = [
@@ -302,7 +303,9 @@ const CRM = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <CRMDashboardMockup />
+          <DashboardFrame naturalWidth={900}>
+            <CRMDashboardMockup />
+          </DashboardFrame>
         </motion.div>
       </div>
     </section>
