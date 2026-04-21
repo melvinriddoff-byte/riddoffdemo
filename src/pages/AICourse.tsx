@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import nanduImg from "@/components/assets/nandu.jpg";
 
 // ── Tokens — matched to site theme (hsl vars from index.css) ────────
 const WRAP: React.CSSProperties = {
-  "--ink":        "#012a4a",   // --foreground / --secondary
-  "--ink-2":      "#013a63",   // --accent (slightly lighter navy)
-  "--ink-3":      "#4d7a96",   // --muted-foreground
-  "--paper":      "#ffffff",   // --background
-  "--paper-2":    "#f0f6fc",   // --card (very light blue tint)
-  "--paper-3":    "#dceaf5",   // --muted (light blue)
-  "--rule":       "#c8d8e6",   // --border
-  "--rule-strong":"#a8c4d8",   // stronger border
-  "--accent":     "#01497c",   // --primary
+  "--ink": "#012a4a",   // --foreground / --secondary
+  "--ink-2": "#013a63",   // --accent (slightly lighter navy)
+  "--ink-3": "#4d7a96",   // --muted-foreground
+  "--paper": "#ffffff",   // --background
+  "--paper-2": "#f0f6fc",   // --card (very light blue tint)
+  "--paper-3": "#dceaf5",   // --muted (light blue)
+  "--rule": "#c8d8e6",   // --border
+  "--rule-strong": "#a8c4d8",   // stronger border
+  "--accent": "#01497c",   // --primary
   "--accent-ink": "#ffffff",   // --primary-foreground
 } as React.CSSProperties;
 
@@ -433,9 +434,9 @@ function Outcomes() {
 
 // ── Instructors ─────────────────────────────────────────────────────
 const TEAM = [
-  { name: "Razal Rahman.", role: "Lead Instructor · Track B", pill: "Systems · Fintech", bio: "Ex-principal engineer at a Bangalore fintech. Ten years shipping payment systems; last four building LLM products used by 4M monthly actives. Writes the textbook." },
-  { name: "Melvin Maichle T.", role: "Fellowship Director · Track C", pill: "Governance · Health", bio: "Architect at a healthcare AI unicorn. DPDP Act practitioner, former regulator consultant. Runs Riddoff's red-team for client case studies." },
-  { name: "Nandu K.", role: "Operator Lead · Track A", pill: "No-code · Ops", bio: "Ran a 40-person BPO floor for six years. Now builds n8n and Lindy workflows for Tier-2 clients in Kochi and Coimbatore. Teaches the non-technical track in plain language." },
+  { name: "Razal Rahman.", role: "Lead Instructor · Track B", pill: "Systems · AI", bio: "Ex-principal engineer at a Bangalore fintech. Ten years shipping payment systems; last four building LLM products used by 4M monthly actives. Writes the textbook." },
+  { name: "Melvin Maichle T.", role: "Fellowship Director · Track C", pill: "Web · Design", bio: "Architect at a healthcare AI unicorn. DPDP Act practitioner, former regulator consultant. Runs Riddoff's red-team for client case studies." },
+  { name: "Nandu K.", role: "Operator Lead · Track A", pill: "Data · Scientist", bio: "Ran a 40-person BPO floor for six years. Now builds n8n and Lindy workflows for Tier-2 clients in Kochi and Coimbatore. Teaches the non-technical track in plain language." },
 ];
 const TESTIMONIALS = [
   { q: "Three weeks in, I deployed my first RAG agent to staging. Four months later I was leading the AI pod at my GCC.", a: "Sreelakshmi V. · Cohort 04 · Kochi" },
@@ -452,7 +453,11 @@ function Instructors() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--ink)" }}>
           {TEAM.map((p, i) => (
             <div key={p.name} style={{ padding: 28, borderRight: i < 2 ? "1px solid var(--ink)" : "none" }}>
-              <Placeholder ratio="4 / 5" label={`portrait · ${p.name.split(" ")[0].toLowerCase()}`} style={{ marginBottom: 20 }} />
+              {p.name.startsWith("Nandu") ? (
+                <img src={nanduImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
+              ) : (
+                <Placeholder ratio="4 / 5" label={`portrait · ${p.name.split(" ")[0].toLowerCase()}`} style={{ marginBottom: 20 }} />
+              )}
               <Tag style={{ marginBottom: 14 }}>{p.pill}</Tag>
               <div style={{ ...serif, fontSize: 36, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 8, color: "var(--ink)" }}>{p.name}</div>
               <div style={{ ...mono, ...cap, color: "var(--ink-3)", marginBottom: 14 }}>{p.role}</div>
