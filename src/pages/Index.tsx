@@ -27,12 +27,12 @@ const Index = () => {
               Automate your busywork with intelligent agents that learn, adapt, and execute—so your team can focus on what matters most.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-              <Button size="lg" asChild className="bg-white text-[#012a4a] hover:bg-white/90 font-semibold rounded-full">
+              <Button size="lg" asChild className="bg-white text-[#012a4a] hover:bg-blue-500 hover:text-white font-semibold rounded-full transition-colors duration-200">
                 <Link to="/contact">
                   Start a free trial <ArrowRight className="ml-2" size={16} />
                 </Link>
               </Button>
-              <Button size="lg" asChild className="border border-white/30 text-white bg-transparent hover:bg-white/10 rounded-full">
+              <Button size="lg" asChild className="border border-white/30 text-white bg-transparent hover:bg-white hover:text-[#012a4a] rounded-full transition-colors duration-200">
                 <Link to="/contact">Book a demo</Link>
               </Button>
             </div>
