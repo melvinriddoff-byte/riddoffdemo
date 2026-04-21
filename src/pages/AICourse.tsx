@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import nanduImg from "@/components/assets/nandu.jpg";
+import melvinImg from "@/components/assets/melvin.jpg";
 
 // ── Tokens — matched to site theme (hsl vars from index.css) ────────
 const WRAP: React.CSSProperties = {
@@ -455,6 +456,8 @@ function Instructors() {
             <div key={p.name} style={{ padding: 28, borderRight: i < 2 ? "1px solid var(--ink)" : "none" }}>
               {p.name.startsWith("Nandu") ? (
                 <img src={nanduImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
+              ) : p.name.startsWith("Melvin") ? (
+                <img src={melvinImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
               ) : (
                 <Placeholder ratio="4 / 5" label={`portrait · ${p.name.split(" ")[0].toLowerCase()}`} style={{ marginBottom: 20 }} />
               )}
