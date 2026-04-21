@@ -17,7 +17,7 @@ const WRAP: React.CSSProperties = {
 } as React.CSSProperties;
 
 // ── Primitive components ────────────────────────────────────────────
-const mono: React.CSSProperties = { fontFamily: "'Space Grotesk', 'General Sans', sans-serif" };
+const mono: React.CSSProperties = { fontFamily: "'General Sans', 'Space Grotesk', sans-serif" };
 const serif: React.CSSProperties = { fontFamily: "'Melodrama', serif" };
 const cap: React.CSSProperties = { textTransform: "uppercase" as const, letterSpacing: "0.08em", fontSize: 11 };
 
