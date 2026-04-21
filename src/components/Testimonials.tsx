@@ -4,7 +4,7 @@ import { useState } from "react";
 const testimonials = [
   {
     quote: "Riddoff transformed how we manage stock across our showroom locations. Real-time inventory tracking has eliminated overstock issues completely.",
-    name: "Muhamed Binazim",
+    name: "Shahid",
     role: "Managing Director",
     company: "@Alrams Furniture",
     initials: "MB",
