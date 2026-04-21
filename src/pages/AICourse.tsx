@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import nanduImg from "@/components/assets/nandu.jpg";
 import melvinImg from "@/components/assets/melvin.jpg";
+import razalImg from "@/components/assets/razal.jpg";
 
 // ── Tokens — matched to site theme (hsl vars from index.css) ────────
 const WRAP: React.CSSProperties = {
@@ -74,21 +75,6 @@ function Arrow({ size = 14 }: { size?: number }) {
   );
 }
 
-function Placeholder({ ratio = "4 / 3", label, style }: { ratio?: string; label?: string; style?: React.CSSProperties }) {
-  return (
-    <div style={{
-      aspectRatio: ratio,
-      background: "repeating-linear-gradient(135deg, var(--paper-2) 0 6px, var(--paper-3) 6px 12px)",
-      border: "1px solid var(--rule-strong)", position: "relative", ...style,
-    }}>
-      {label && (
-        <div style={{ ...mono, ...cap, position: "absolute", left: 10, bottom: 10, background: "var(--paper)", padding: "4px 7px", border: "1px solid var(--rule-strong)", color: "var(--ink-2)" }}>
-          {label}
-        </div>
-      )}
-    </div>
-  );
-}
 
 function SectionHead({ num, label, title, kicker }: { num: string; label: string; title: string; kicker?: string }) {
   return (
@@ -459,7 +445,7 @@ function Instructors() {
               ) : p.name.startsWith("Melvin") ? (
                 <img src={melvinImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
               ) : (
-                <Placeholder ratio="4 / 5" label={`portrait · ${p.name.split(" ")[0].toLowerCase()}`} style={{ marginBottom: 20 }} />
+                <img src={razalImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
               )}
               <Tag style={{ marginBottom: 14 }}>{p.pill}</Tag>
               <div style={{ ...serif, fontSize: 36, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 8, color: "var(--ink)" }}>{p.name}</div>
