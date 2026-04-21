@@ -80,7 +80,7 @@ function SectionHead({ num, label, title, kicker }: { num: string; label: string
   return (
     <div style={{ padding: "0 32px", marginBottom: 40 }}>
       <div style={{ display: "grid", gridTemplateColumns: "80px 1fr", gap: 24, alignItems: "baseline", borderBottom: "1px solid var(--ink)", paddingBottom: 14 }}>
-        <div style={{ ...mono, ...cap, color: "var(--ink-3)" }}>§ {num}</div>
+        <div style={{ ...mono, ...cap, color: "var(--ink-3)" }}>{num}</div>
         <div>
           <div style={{ ...mono, ...cap, color: "var(--accent)", marginBottom: 8 }}>{label}</div>
           <h2 style={{ ...serif, margin: 0, fontSize: "clamp(40px, 6vw, 64px)", lineHeight: .95, letterSpacing: "-0.015em", fontWeight: 400, color: "var(--ink)" }}>{title}</h2>
@@ -159,8 +159,8 @@ function Hero() {
           </div>
           <h1 style={{ ...serif, margin: 0, fontSize: "clamp(56px, 9vw, 120px)", lineHeight: .88, letterSpacing: "-0.03em", fontWeight: 400, color: "var(--ink)", overflowWrap: "break-word" as const }}>
             The textbook<br />
-            <span style={{ fontStyle: "italic", color: "var(--accent)" }}>that ships</span><br />
-            to production.
+            <span style={{ fontStyle: "italic", color: "var(--accent)" }}>that ships to</span><br />
+            production.
           </h1>
           <div style={{ marginTop: 34, maxWidth: 560, fontSize: 20, lineHeight: 1.4, color: "var(--ink-2)" }}>
             A 14-week applied AI &amp; MLOps program for engineers who'd rather deploy a RAG agent than read another blog post about one. Built around a 1,400-page working textbook — written, rewritten, and road-tested against real GCC job specs in Kochi, Hyderabad, and Bangalore.
@@ -317,7 +317,7 @@ function SyllabusRow({ s, defaultOpen }: { s: typeof SYLLABUS_SECTIONS[0]; defau
   return (
     <div style={{ borderBottom: "1px solid var(--ink)" }}>
       <button onClick={() => setOpen(!open)} style={{ display: "grid", gridTemplateColumns: "80px 2fr 1fr 40px", gap: 24, alignItems: "center", width: "100%", padding: "22px 24px", background: s.featured && !open ? "var(--paper-2)" : "transparent", border: "none", cursor: "pointer", textAlign: "left", fontFamily: "inherit" }}>
-        <div style={{ ...mono, ...cap, color: "var(--ink-3)" }}>§ {s.num}</div>
+        <div style={{ ...mono, ...cap, color: "var(--ink-3)" }}>{s.num}</div>
         <div style={{ ...serif, fontSize: 28, letterSpacing: "-0.015em", color: "var(--ink)" }}>{s.title}</div>
         <div style={{ ...mono, ...cap, color: "var(--ink-3)", textAlign: "right" }}>{s.weeks} · {s.lectures.length} lectures</div>
         <div style={{ textAlign: "right", fontSize: 22, color: "var(--ink-3)" }}>{open ? "–" : "+"}</div>
@@ -341,7 +341,7 @@ function SyllabusRow({ s, defaultOpen }: { s: typeof SYLLABUS_SECTIONS[0]; defau
 function Syllabus() {
   return (
     <section style={{ padding: "60px 0", background: "var(--paper)" }}>
-      <SectionHead num="02" label="§02 · The Syllabus" title="Twenty-six lectures. One production system."
+      <SectionHead num="02" label="02 · The Syllabus" title="Twenty-six lectures. One production system."
         kicker="The Track B curriculum in full. Every lecture is a chapter in the textbook you'll carry in after the course ends. Marked new 2026 are the six gap-filling modules added this year." />
       <div style={{ padding: "0 32px" }}>
         <div style={{ border: "1px solid var(--ink)", borderBottom: "none" }}>
@@ -369,7 +369,7 @@ const GCC_PARTNERS = ["Acme Fintech", "Nair Health", "Backwater Labs", "Deccan C
 function Outcomes() {
   return (
     <section style={{ padding: "80px 0", background: "var(--paper-2)", borderTop: "1px solid var(--ink)", borderBottom: "1px solid var(--ink)" }}>
-      <SectionHead num="03" label="§03 · Outcomes" title="What hiring panels actually see."
+      <SectionHead num="03" label="03 · Outcomes" title="What hiring panels actually see."
         kicker="We optimise for what happens after the course, not the certificate. These are the artefacts every Track B graduate ships." />
       <div style={{ padding: "0 32px", display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 48, alignItems: "start" }}>
         <div style={{ border: "1px solid var(--ink)", background: "var(--paper)" }}>
@@ -434,7 +434,7 @@ const TESTIMONIALS = [
 function Instructors() {
   return (
     <section style={{ padding: "80px 0", background: "var(--paper)" }}>
-      <SectionHead num="04" label="§04 · Who teaches" title="Working engineers. Not influencers."
+      <SectionHead num="04" label="04 · Who teaches" title="Working engineers. Not influencers."
         kicker="Every lecture is taught by someone on-call for a real production system this week." />
       <div style={{ padding: "0 32px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0, border: "1px solid var(--ink)" }}>
@@ -485,7 +485,7 @@ const FINE_PRINT: [string, string][] = [
 function Pricing() {
   return (
     <section style={{ padding: "80px 0", background: "var(--paper-2)", borderTop: "1px solid var(--ink)", borderBottom: "1px solid var(--ink)" }}>
-      <SectionHead num="05" label="§05 · Tuition" title="Pay once. Refer forever."
+      <SectionHead num="05" label="05 · Tuition" title="Pay once. Refer forever."
         kicker="Every track has the same return policy: if you attend all live sessions, ship the capstone, and don't feel hiring-ready, we refund 100% within 30 days of graduation." />
       <div style={{ padding: "0 32px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", border: "1px solid var(--ink)" }}>
@@ -539,7 +539,7 @@ const FAQ_ITEMS: [string, string][] = [
 function FAQ() {
   return (
     <section style={{ padding: "80px 0", background: "var(--paper)" }}>
-      <SectionHead num="06" label="§06 · Details" title="Questions we're asked most." />
+      <SectionHead num="06" label="06 · Details" title="Questions we're asked most." />
       <div style={{ padding: "0 32px" }}>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 0, border: "1px solid var(--ink)" }}>
           {FAQ_ITEMS.map(([q, a], i) => (
@@ -559,7 +559,7 @@ function Finale() {
   return (
     <section style={{ background: "var(--ink)", color: "var(--paper)", padding: "100px 32px 80px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ ...mono, ...cap, color: "rgba(250,246,236,.5)", marginBottom: 24 }}>§07 · End matter</div>
+        <div style={{ ...mono, ...cap, color: "rgba(250,246,236,.5)", marginBottom: 24 }}>07 · End matter</div>
         <h2 style={{ ...serif, margin: 0, fontSize: "clamp(48px, 10vw, 120px)", lineHeight: .9, letterSpacing: "-0.03em", fontWeight: 400, overflowWrap: "break-word" as const }}>
           Apply by <span style={{ fontStyle: "italic", color: "#6ab8de" }}>01 May</span>.<br />
           To join the course.
