@@ -17,8 +17,8 @@ const WRAP: React.CSSProperties = {
 } as React.CSSProperties;
 
 // ── Primitive components ────────────────────────────────────────────
-const mono: React.CSSProperties = { fontFamily: "'JetBrains Mono', 'Courier New', monospace" };
-const serif: React.CSSProperties = { fontFamily: "'Playfair Display', 'Georgia', serif" };
+const mono: React.CSSProperties = { fontFamily: "'Space Grotesk', 'General Sans', sans-serif" };
+const serif: React.CSSProperties = { fontFamily: "'Melodrama', serif" };
 const cap: React.CSSProperties = { textTransform: "uppercase" as const, letterSpacing: "0.08em", fontSize: 11 };
 
 function Rule({ strong, style }: { strong?: boolean; style?: React.CSSProperties }) {
@@ -585,10 +585,6 @@ function Finale() {
 export default function AICourse() {
   return (
     <div style={WRAP}>
-      {/* Google Fonts for the editorial type system */}
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap');
-      `}</style>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
         <Hero />
         <Tracks />
