@@ -8,60 +8,31 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section
-        className="relative overflow-hidden"
-        style={{
-          background: "linear-gradient(160deg, #1a2f5a 0%, #0d1630 60%, #0a1228 100%)",
-          paddingTop: "clamp(80px, 14vw, 160px)",
-          paddingBottom: "clamp(64px, 10vw, 120px)",
-          paddingLeft: "1.5rem",
-          paddingRight: "1.5rem",
-        }}
-      >
-        <div className="container mx-auto max-w-5xl text-center">
+      <section className="relative py-16 sm:py-24 md:py-36 px-4 sm:px-6 overflow-hidden" style={{ backgroundColor: "hsl(206, 97%, 15%)" }}>
+        <div className="container mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-2 border border-white/20 bg-white/10 text-white/80 px-4 py-1.5 rounded-full text-xs sm:text-sm font-satoshi font-medium mb-6 sm:mb-8">
+            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/80 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-satoshi font-medium mb-4 sm:mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
               Introducing Rabos ERP
             </span>
-            <h1
-              className="text-white mb-6 sm:mb-8"
-              style={{
-                fontFamily: "'Instrument Serif', serif",
-                fontWeight: 400,
-                fontSize: "clamp(48px, 9vw, 120px)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              The{" "}
-              <span style={{ fontStyle: "italic" }}>future</span>
-              {" "}of a<br />
-              <span style={{ color: "rgba(255,255,255,0.45)" }}>clutter-free</span>{" "}
-              company.
+            <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 sm:mb-6">
+              The Future of Smarter{" "}
+              <span className="text-white/50">RABOS</span>
             </h1>
-            <p className="font-satoshi text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
-              Give every employee an intelligent agent that audits their SaaS, cancels the dead ones, and quietly reports back — so your team keeps what matters.
+            <p className="font-satoshi text-base sm:text-lg md:text-xl text-white/65 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
+              Automate your busywork with intelligent agents that learn, adapt, and execute—so your team can focus on what matters most.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-              <Button
-                size="lg"
-                asChild
-                className="bg-white text-[#0d1630] hover:bg-white/90 font-semibold rounded-full px-7 shadow-lg"
-              >
+              <Button size="lg" asChild className="bg-white text-[#012a4a] hover:bg-white/90 font-semibold rounded-full">
                 <Link to="/contact">
                   Start a free trial <ArrowRight className="ml-2" size={16} />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                asChild
-                className="bg-[#1a2f5a] border border-white/25 text-white hover:bg-white/10 rounded-full px-7"
-              >
+              <Button size="lg" asChild className="border border-white/30 text-white bg-transparent hover:bg-white/10 rounded-full">
                 <Link to="/contact">Book a demo</Link>
               </Button>
             </div>
