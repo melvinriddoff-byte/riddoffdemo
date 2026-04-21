@@ -21,7 +21,7 @@ const Index = () => {
             </span>
             <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 sm:mb-6">
               The Future of Smarter{" "}
-              <span className="text-white/50">RABOS</span>
+              <span className="text-yellow-400">RABOS</span>
             </h1>
             <p className="font-satoshi text-base sm:text-lg md:text-xl text-white/65 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
               Automate your busywork with intelligent agents that learn, adapt, and execute—so your team can focus on what matters most.
