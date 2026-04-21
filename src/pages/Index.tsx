@@ -10,7 +10,7 @@ const Index = () => {
       {/* Hero */}
       <section
         className="relative py-16 sm:py-24 md:py-36 px-4 sm:px-6 overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #1a2f5a 0%, #0d1a36 100%)" }}
+        style={{ background: "linear-gradient(180deg, #ffffff 0%, #e4eaf6 100%)" }}
       >
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
@@ -18,38 +18,31 @@ const Index = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white/90 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-satoshi font-medium mb-4 sm:mb-6">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
+            <span className="inline-flex items-center gap-2 bg-white border border-border text-foreground/70 px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-satoshi font-medium mb-4 sm:mb-6 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary inline-block" />
               Introducing Rabos ERP
             </span>
             <h1
-              style={{ fontFamily: "'Instrument Serif', serif", fontWeight: 400 }}
-              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white leading-[0.92] tracking-tight mb-4 sm:mb-6"
+              style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 400, lineHeight: 1.0 }}
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-foreground tracking-tight mb-4 sm:mb-6"
             >
-              The Future of a{" "}
-              <br className="hidden sm:block" />
-              <span style={{ fontStyle: "italic", color: "#a8cce8" }}>clutter-free</span>{" "}
-              company.
+              The{" "}
+              <span style={{ fontStyle: "italic" }}>Smart Future</span>
+              {" "}of<br />
+              Your{" "}
+              <span style={{ fontStyle: "italic" }}>Digital</span>
+              {" "}Business
             </h1>
-            <p className="font-satoshi text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
+            <p className="font-satoshi text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
               Automate your busywork with intelligent agents that learn, adapt, and execute—so your team can focus on what matters most.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-              <Button
-                size="lg"
-                asChild
-                className="bg-white text-[#0d1a36] hover:bg-white/90 font-semibold rounded-full shadow-lg"
-              >
+              <Button variant="hero" size="lg" asChild className="rounded-xl">
                 <Link to="/contact">
                   Start a free trial <ArrowRight className="ml-2" size={16} />
                 </Link>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="border-white/30 text-white hover:bg-white/10 rounded-full"
-              >
+              <Button variant="heroOutline" size="lg" asChild className="rounded-xl">
                 <Link to="/contact">Book a demo</Link>
               </Button>
             </div>
