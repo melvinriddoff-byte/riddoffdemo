@@ -1,7 +1,7 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Instagram, Linkedin, ArrowUp } from "lucide-react";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionTemplate } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 
@@ -38,6 +38,7 @@ const Navbar = () => {
   const rawShadowOp = useTransform(scrollY, [0, 80], [0, 1]);
   const rawHeight   = useTransform(scrollY, [0, 80], [64, 48]);
   const rawFontSize = useTransform(scrollY, [0, 80], [22, 18]);
+  const rawGap      = useTransform(scrollY, [0, 80], [0, 32]);
 
   const top      = useSpring(rawTop,      springConfig);
   const radius   = useSpring(rawRadius,   springConfig);
@@ -47,6 +48,8 @@ const Navbar = () => {
   const shadowOp = useSpring(rawShadowOp, springConfig);
   const height   = useSpring(rawHeight,   springConfig);
   const fontSize = useSpring(rawFontSize, springConfig);
+  const gap      = useSpring(rawGap,      springConfig);
+  const width    = useMotionTemplate`calc(100% - ${gap}px)`;
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
@@ -57,7 +60,7 @@ const Navbar = () => {
           top,
           left: "50%",
           x: "-50%",
-          width: "calc(100% - 32px)",
+          width,
           maxWidth: maxW,
           borderRadius: radius,
           paddingLeft: pad,
