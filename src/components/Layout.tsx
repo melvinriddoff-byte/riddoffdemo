@@ -19,9 +19,16 @@ const springConfig = { stiffness: 90, damping: 20, mass: 0.6 };
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [atTop, setAtTop] = useState(true);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const unsub = scrollY.on("change", (v) => setAtTop(v < 40));
+    return unsub;
+  }, [scrollY]);
 
   // All values interpolated continuously from scroll position — no binary state snap
   const rawTop      = useTransform(scrollY, [0, 80], [0, 14]);
@@ -58,16 +65,18 @@ const Navbar = () => {
           paddingRight: pad,
           backdropFilter: "blur(20px) saturate(180%)",
           WebkitBackdropFilter: "blur(20px) saturate(180%)",
-          backgroundColor: glassOp.get() > 0.05
-            ? `rgba(255,255,255,${0.22})`
-            : "rgba(255,255,255,0)",
+          backgroundColor: isHomePage && atTop
+            ? "rgba(13, 22, 48, 0.55)"
+            : glassOp.get() > 0.05
+              ? "rgba(255,255,255,0.22)"
+              : "rgba(255,255,255,0)",
         }}
       >
-        {/* Glass tint layer — opacity driven by scroll */}
+        {/* Glass tint layer — opacity driven by scroll (only on non-dark-hero pages) */}
         <motion.div
           className="absolute inset-0 pointer-events-none"
           style={{
-            opacity: glassOp,
+            opacity: isHomePage && atTop ? 0 : glassOp,
             background: "rgba(255,255,255,0.22)",
             boxShadow: "0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.7), inset 0 -1px 0 rgba(255,255,255,0.15)",
             borderRadius: "inherit",
@@ -88,7 +97,10 @@ const Navbar = () => {
           style={{ height }}
         >
           <motion.div style={{ fontSize }}>
-            <Link to="/" className="font-satoshi font-bold text-foreground tracking-tight">
+            <Link
+              to="/"
+              className={`font-satoshi font-bold tracking-tight transition-colors duration-300 ${isHomePage && atTop ? "text-white" : "text-foreground"}`}
+            >
               Riddoff
             </Link>
           </motion.div>
@@ -99,13 +111,21 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`font-satoshi text-sm font-medium transition-colors duration-200 hover:text-primary relative group ${location.pathname === link.href ? "text-primary" : "text-muted-foreground"
-                  }`}
+                className={`font-satoshi text-sm font-medium transition-colors duration-200 relative group ${
+                  isHomePage && atTop
+                    ? location.pathname === link.href
+                      ? "text-white"
+                      : "text-white/65 hover:text-white"
+                    : location.pathname === link.href
+                      ? "text-primary hover:text-primary"
+                      : "text-muted-foreground hover:text-primary"
+                }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-0.5 left-0 h-px bg-primary transition-all duration-300 ${location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
+                  className={`absolute -bottom-0.5 left-0 h-px transition-all duration-300 ${
+                    isHomePage && atTop ? "bg-white" : "bg-primary"
+                  } ${location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"}`}
                 />
               </Link>
             ))}
@@ -114,7 +134,11 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <Link
               to="/contact"
-              className="font-satoshi bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors"
+              className={`font-satoshi px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+                isHomePage && atTop
+                  ? "bg-white text-[#0d1630] hover:bg-white/90"
+                  : "bg-primary text-white hover:bg-primary/90"
+              }`}
             >
               Start free trial
             </Link>
@@ -123,7 +147,7 @@ const Navbar = () => {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-foreground"
+            className={`md:hidden transition-colors ${isHomePage && atTop ? "text-white" : "text-foreground"}`}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
