@@ -83,8 +83,8 @@ function SectionHead({ num, label, title, kicker }: { num: string; label: string
         <div style={{ ...mono, ...cap, color: "var(--ink-3)" }}>{num}</div>
         <div>
           <div style={{ ...mono, ...cap, color: "var(--accent)", marginBottom: 8 }}>{label}</div>
-          <h2 style={{ ...serif, margin: 0, fontSize: "clamp(40px, 6vw, 64px)", lineHeight: .95, letterSpacing: "-0.015em", fontWeight: 400, color: "var(--ink)" }}>{title}</h2>
-          {kicker && <div style={{ marginTop: 14, maxWidth: 620, color: "var(--ink-2)", fontSize: 17, lineHeight: 1.45 }}>{kicker}</div>}
+          <h2 style={{ ...serif, margin: 0, fontSize: "clamp(28px, 4vw, 48px)", lineHeight: .95, letterSpacing: "-0.015em", fontWeight: 400, color: "var(--ink)" }}>{title}</h2>
+          {kicker && <div style={{ marginTop: 14, maxWidth: 620, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.45 }}>{kicker}</div>}
         </div>
       </div>
     </div>
@@ -96,7 +96,7 @@ function Stat({ k, v, sub }: { k: string; v: string; sub: string }) {
   return (
     <div>
       <div style={{ ...mono, ...cap, color: "var(--ink-3)", marginBottom: 4 }}>{k}</div>
-      <div style={{ ...serif, fontSize: 36, lineHeight: 1, letterSpacing: "-0.02em", color: "var(--ink)" }}>{v}</div>
+      <div style={{ ...serif, fontSize: 24, lineHeight: 1, letterSpacing: "-0.02em", color: "var(--ink)" }}>{v}</div>
       <div style={{ ...mono, fontSize: 11, color: "var(--ink-3)", marginTop: 4 }}>{sub}</div>
     </div>
   );
@@ -136,7 +136,7 @@ function DossierCard() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <div style={{ ...mono, ...cap, color: "var(--ink-3)" }}>Tuition</div>
-          <div style={{ ...serif, fontSize: 32, letterSpacing: "-0.02em", color: "var(--ink)" }}>₹65,000</div>
+          <div style={{ ...serif, fontSize: 22, letterSpacing: "-0.02em", color: "var(--ink)" }}>₹65,000</div>
           <div style={{ ...mono, fontSize: 11, color: "var(--ink-3)" }}>or 3 × ₹22,500 · ISA available</div>
         </div>
         <Link to="/contact" style={{ textDecoration: "none" }}>
@@ -157,12 +157,12 @@ function Hero() {
             <Tag>22 Lectures · 14 Weeks</Tag>
             <Tag tone="ghost">Live · Kochi + Remote</Tag>
           </div>
-          <h1 style={{ ...serif, margin: 0, fontSize: "clamp(56px, 9vw, 120px)", lineHeight: .88, letterSpacing: "-0.03em", fontWeight: 400, color: "var(--ink)", overflowWrap: "break-word" as const }}>
+          <h1 style={{ ...serif, margin: 0, fontSize: "clamp(36px, 5vw, 72px)", lineHeight: .88, letterSpacing: "-0.03em", fontWeight: 400, color: "var(--ink)", overflowWrap: "break-word" as const }}>
             The textbook<br />
             <span style={{ fontStyle: "italic", color: "var(--accent)" }}>that ships to</span><br />
             production.
           </h1>
-          <div style={{ marginTop: 34, maxWidth: 560, fontSize: 20, lineHeight: 1.4, color: "var(--ink-2)" }}>
+          <div style={{ marginTop: 34, maxWidth: 560, fontSize: 16, lineHeight: 1.4, color: "var(--ink-2)" }}>
             A 14-week applied AI &amp; MLOps program for engineers who'd rather deploy a RAG agent than read another blog post about one. Built around a 1,400-page working textbook — written, rewritten, and road-tested against real GCC job specs in Kochi, Hyderabad, and Bangalore.
           </div>
           <div style={{ marginTop: 36, display: "flex", gap: 12, flexWrap: "wrap" as const }}>
@@ -252,7 +252,7 @@ function TrackCard({ t, last }: { t: typeof TRACKS[0]; last: boolean }) {
       </div>
       <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
         <div style={{ ...serif, fontSize: 22, opacity: .6 }}>0{t.id === "A" ? 1 : t.id === "B" ? 2 : 3}</div>
-        <h3 style={{ ...serif, margin: 0, fontSize: "clamp(48px, 5vw, 68px)", lineHeight: .9, letterSpacing: "-0.02em", fontWeight: 400 }}>{t.title}</h3>
+        <h3 style={{ ...serif, margin: 0, fontSize: "clamp(24px, 3vw, 42px)", lineHeight: .9, letterSpacing: "-0.02em", fontWeight: 400 }}>{t.title}</h3>
       </div>
       <div style={{ ...mono, marginTop: 10, fontSize: 13, color: t.featured ? "rgba(250,246,236,.6)" : "var(--ink-3)" }}>For: {t.for}</div>
       <div style={{ marginTop: 16, fontSize: 15, lineHeight: 1.45, color: t.featured ? "rgba(250,246,236,.9)" : "var(--ink-2)" }}>{t.blurb}</div>
@@ -271,7 +271,7 @@ function TrackCard({ t, last }: { t: typeof TRACKS[0]; last: boolean }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 14 }}>
           <div>
             <div style={{ ...mono, ...cap, color: t.featured ? "rgba(250,246,236,.5)" : "var(--ink-3)" }}>Tuition</div>
-            <div style={{ ...serif, fontSize: 40, lineHeight: 1, letterSpacing: "-0.02em" }}>{t.price}</div>
+            <div style={{ ...serif, fontSize: 26, lineHeight: 1, letterSpacing: "-0.02em" }}>{t.price}</div>
           </div>
           <div style={{ textAlign: "right" }}>
             <div style={{ ...mono, ...cap, color: t.featured ? "rgba(250,246,236,.5)" : "var(--ink-3)" }}>Duration</div>
@@ -318,7 +318,7 @@ function SyllabusRow({ s, defaultOpen }: { s: typeof SYLLABUS_SECTIONS[0]; defau
     <div style={{ borderBottom: "1px solid var(--ink)" }}>
       <button onClick={() => setOpen(!open)} style={{ display: "grid", gridTemplateColumns: "80px 2fr 1fr 40px", gap: 24, alignItems: "center", width: "100%", padding: "22px 24px", background: s.featured && !open ? "var(--paper-2)" : "transparent", border: "none", cursor: "pointer", textAlign: "left", fontFamily: "inherit" }}>
         <div style={{ ...mono, ...cap, color: "var(--ink-3)" }}>{s.num}</div>
-        <div style={{ ...serif, fontSize: 28, letterSpacing: "-0.015em", color: "var(--ink)" }}>{s.title}</div>
+        <div style={{ ...serif, fontSize: 20, letterSpacing: "-0.015em", color: "var(--ink)" }}>{s.title}</div>
         <div style={{ ...mono, ...cap, color: "var(--ink-3)", textAlign: "right" }}>{s.weeks} · {s.lectures.length} lectures</div>
         <div style={{ textAlign: "right", fontSize: 22, color: "var(--ink-3)" }}>{open ? "–" : "+"}</div>
       </button>
@@ -381,9 +381,9 @@ function Outcomes() {
             ["05", "Riddoff referral", "Top-quartile graduates routed to 28 partner GCCs in Kochi, Hyderabad, Bangalore."],
           ] as [string, string, string][]).map(([n, title, desc], i, arr) => (
             <div key={n} style={{ display: "grid", gridTemplateColumns: "60px 1fr", gap: 20, padding: "22px 24px", borderBottom: i < arr.length - 1 ? "1px solid var(--rule-strong)" : "none" }}>
-              <div style={{ ...serif, fontSize: 36, lineHeight: 1, color: "var(--accent)" }}>{n}</div>
+              <div style={{ ...serif, fontSize: 24, lineHeight: 1, color: "var(--accent)" }}>{n}</div>
               <div>
-                <div style={{ ...serif, fontSize: 24, letterSpacing: "-0.01em", marginBottom: 6, color: "var(--ink)" }}>{title}</div>
+                <div style={{ ...serif, fontSize: 20, letterSpacing: "-0.01em", marginBottom: 6, color: "var(--ink)" }}>{title}</div>
                 <div style={{ color: "var(--ink-2)", fontSize: 15, lineHeight: 1.45 }}>{desc}</div>
               </div>
             </div>
@@ -448,7 +448,7 @@ function Instructors() {
                 <img src={razalImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
               )}
               <Tag style={{ marginBottom: 14 }}>{p.pill}</Tag>
-              <div style={{ ...serif, fontSize: 36, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 8, color: "var(--ink)" }}>{p.name}</div>
+              <div style={{ ...serif, fontSize: 24, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 8, color: "var(--ink)" }}>{p.name}</div>
               <div style={{ ...mono, ...cap, color: "var(--ink-3)", marginBottom: 14 }}>{p.role}</div>
               <div style={{ color: "var(--ink-2)", fontSize: 15, lineHeight: 1.5 }}>{p.bio}</div>
             </div>
@@ -457,7 +457,7 @@ function Instructors() {
         <div style={{ marginTop: 40, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
           {TESTIMONIALS.map((t, i) => (
             <div key={i} style={{ padding: 24, background: "var(--paper-2)", border: "1px solid var(--rule-strong)" }}>
-              <div style={{ ...serif, fontSize: 22, lineHeight: 1.3, letterSpacing: "-0.01em", color: "var(--ink)" }}>
+              <div style={{ ...serif, fontSize: 17, lineHeight: 1.3, letterSpacing: "-0.01em", color: "var(--ink)" }}>
                 <span style={{ color: "var(--accent)" }}>"</span>{t.q}<span style={{ color: "var(--accent)" }}>"</span>
               </div>
               <div style={{ ...mono, ...cap, color: "var(--ink-3)", marginTop: 18 }}>— {t.a}</div>
@@ -492,8 +492,8 @@ function Pricing() {
           {PLANS.map((t, i, arr) => (
             <div key={t.n} style={{ padding: 32, background: t.featured ? "var(--ink)" : "var(--paper)", color: t.featured ? "var(--paper)" : "var(--ink)", borderRight: i < arr.length - 1 ? "1px solid var(--ink)" : "none" }}>
               <div style={{ ...mono, ...cap, color: t.featured ? "rgba(250,246,236,.5)" : "var(--ink-3)", marginBottom: 10 }}>Track {t.track}</div>
-              <div style={{ ...serif, fontSize: 44, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 18 }}>{t.n}</div>
-              <div style={{ ...serif, fontSize: 64, lineHeight: 1, letterSpacing: "-0.03em" }}>{t.p}</div>
+              <div style={{ ...serif, fontSize: 28, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 18 }}>{t.n}</div>
+              <div style={{ ...serif, fontSize: 36, lineHeight: 1, letterSpacing: "-0.03em" }}>{t.p}</div>
               <div style={{ ...mono, marginTop: 6, fontSize: 12, color: t.featured ? "rgba(250,246,236,.6)" : "var(--ink-3)" }}>{t.sub}</div>
               <div style={{ height: 1, background: t.featured ? "rgba(250,246,236,.2)" : "var(--rule-strong)", margin: "22px 0" }} />
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -544,7 +544,7 @@ function FAQ() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 0, border: "1px solid var(--ink)" }}>
           {FAQ_ITEMS.map(([q, a], i) => (
             <div key={q} style={{ padding: 24, borderRight: i % 2 === 0 ? "1px solid var(--ink)" : "none", borderBottom: i < FAQ_ITEMS.length - 2 ? "1px solid var(--rule-strong)" : "none" }}>
-              <div style={{ ...serif, fontSize: 22, lineHeight: 1.2, letterSpacing: "-0.01em", marginBottom: 12, color: "var(--ink)" }}>{q}</div>
+              <div style={{ ...serif, fontSize: 18, lineHeight: 1.2, letterSpacing: "-0.01em", marginBottom: 12, color: "var(--ink)" }}>{q}</div>
               <div style={{ color: "var(--ink-2)", fontSize: 15, lineHeight: 1.5 }}>{a}</div>
             </div>
           ))}
@@ -560,7 +560,7 @@ function Finale() {
     <section style={{ background: "var(--ink)", color: "var(--paper)", padding: "100px 32px 80px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ ...mono, ...cap, color: "rgba(250,246,236,.5)", marginBottom: 24 }}>07 · End matter</div>
-        <h2 style={{ ...serif, margin: 0, fontSize: "clamp(48px, 10vw, 120px)", lineHeight: .9, letterSpacing: "-0.03em", fontWeight: 400, overflowWrap: "break-word" as const }}>
+        <h2 style={{ ...serif, margin: 0, fontSize: "clamp(32px, 5vw, 64px)", lineHeight: .9, letterSpacing: "-0.03em", fontWeight: 400, overflowWrap: "break-word" as const }}>
           Apply by <span style={{ fontStyle: "italic", color: "#6ab8de" }}>01 May</span>.<br />
           To join the course.
         </h2>
