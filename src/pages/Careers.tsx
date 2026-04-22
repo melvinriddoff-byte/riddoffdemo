@@ -163,9 +163,9 @@ type TagTone = "default" | "accent" | "ink" | "ghost";
 function Tag({ children, tone, style }: { children: React.ReactNode; tone?: TagTone; style?: React.CSSProperties }) {
   const tones: Record<TagTone, { bg: string; fg: string; border: string }> = {
     default: { bg: "transparent", fg: "var(--ink)", border: "var(--rule-strong)" },
-    accent:  { bg: "var(--accent)", fg: "var(--accent-ink)", border: "var(--accent)" },
-    ink:     { bg: "var(--ink)", fg: "var(--paper)", border: "var(--ink)" },
-    ghost:   { bg: "var(--paper-2)", fg: "var(--ink-2)", border: "transparent" },
+    accent: { bg: "var(--accent)", fg: "var(--accent-ink)", border: "var(--accent)" },
+    ink: { bg: "var(--ink)", fg: "var(--paper)", border: "var(--ink)" },
+    ghost: { bg: "var(--paper-2)", fg: "var(--ink-2)", border: "transparent" },
   };
   const t = tones[tone ?? "default"];
   return (
@@ -243,7 +243,7 @@ function DossierCard() {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
         {([
           ["Starts", "02 Jun 2026"], ["Ends", "08 Sep 2026"],
-          ["Duration", "14 weeks"],  ["Hours", "8 per week"],
+          ["Duration", "14 weeks"], ["Hours", "8 per week"],
           ["Live sessions", "Mon · Wed · Fri"], ["Timing", "19:30–21:00 IST"],
           ["Cohort size", "40 max"], ["Seats left", "12"],
         ] as [string, string][]).map(([k, v], i) => (
@@ -311,10 +311,10 @@ function Hero() {
       {/* Marginalia bar */}
       <div className="aic-marg" style={{ maxWidth: 1200, margin: "64px auto 0", borderTop: "1px solid var(--ink)", borderBottom: "1px solid var(--rule-strong)" }}>
         {([
-          { k: "Written by",    v: "Engineers who've shipped to 10M+ users" },
+          { k: "Written by", v: "Engineers who've shipped to 10M+ users" },
           { k: "Optimised for", v: "GCC hiring panels, not Coursera quizzes" },
-          { k: "Opinionated on",v: "LangGraph over CrewAI for real systems" },
-          { k: "Allergic to",   v: "Jupyter-only \"AI engineers\"" },
+          { k: "Opinionated on", v: "LangGraph over CrewAI for real systems" },
+          { k: "Allergic to", v: "Jupyter-only \"AI engineers\"" },
         ] as { k: string; v: string }[]).map((r) => (
           <div key={r.k} style={{ padding: "20px 24px", borderRight: "1px solid var(--rule)" }}>
             <div style={{ ...mono, ...cap, color: "var(--ink-3)", marginBottom: 8 }}>{r.k}</div>
@@ -328,9 +328,9 @@ function Hero() {
 
 // ── Tracks ───────────────────────────────────────────────────────────
 const TRACKS = [
-  { id: "A", tag: "Track A", title: "Operator", for: "BPO professionals · non-engineers · career switchers", price: "₹24,000", duration: "8 weeks", blurb: "Build AI workflows without writing Python. Ship client-ready automations using n8n, Make, Lindy, and Zapier AI. Freelance-ready by week 6.", modules: ["No-code agents","Business ops AI","Upwork / Fiverr playbook","Regional-language prompting","Client delivery templates"], outcomes: ["First paid client","Retainer-ready toolkit","4 working automations"], ribbon: "Most accessible" },
-  { id: "B", tag: "Track B", featured: true, title: "Engineer", for: "Working software engineers · 1–5 years · GCC aspirants", price: "₹65,000", duration: "14 weeks", blurb: "The flagship. 22 lectures · 7 sections · 1 production capstone. Python, RAG, CrewAI, LangGraph, MLflow, Docker, FastAPI, observability. Built for hiring panels.", modules: ["Advanced prompting","Multi-agent orchestration","RAG with ChromaDB","MLflow + Docker","LangGraph + guardrails","FastAPI + CI/CD","Evaluation (Ragas)","Deployment capstone"], outcomes: ["GitHub portfolio","Deployed agent","Interview-ready stories"], ribbon: "Flagship" },
-  { id: "C", tag: "Track C", title: "Architect", for: "Senior engineers · 5+ years · tech leads · heads of AI", price: "₹1,75,000", duration: "10 weeks · fellowship", blurb: "A working group, not a course. System design for LLM products at scale: advanced RAG, fine-tuning, cost/latency, red-teaming, governance (DPDP Act, EU AI Act). Taught from Riddoff case studies.", modules: ["Hybrid + graph RAG","LoRA / QLoRA","Eval at scale · LLM-as-judge","Cost & latency","Prompt-injection defence","Governance & audit","Build-vs-buy frameworks"], outcomes: ["Architecture dossier","Riddoff alumni network","Fellowship credential"], ribbon: "Invitation only" },
+  { id: "A", tag: "Track A", title: "Operator", for: "BPO professionals · non-engineers · career switchers", price: "₹24,000", duration: "8 weeks", blurb: "Build AI workflows without writing Python. Ship client-ready automations using n8n, Make, Lindy, and Zapier AI. Freelance-ready by week 6.", modules: ["No-code agents", "Business ops AI", "Upwork / Fiverr playbook", "Regional-language prompting", "Client delivery templates"], outcomes: ["First paid client", "Retainer-ready toolkit", "4 working automations"], ribbon: "Most accessible" },
+  { id: "B", tag: "Track B", featured: true, title: "Engineer", for: "Working software engineers · 1–5 years · GCC aspirants", price: "₹65,000", duration: "14 weeks", blurb: "The flagship. 22 lectures · 7 sections · 1 production capstone. Python, RAG, CrewAI, LangGraph, MLflow, Docker, FastAPI, observability. Built for hiring panels.", modules: ["Advanced prompting", "Multi-agent orchestration", "RAG with ChromaDB", "MLflow + Docker", "LangGraph + guardrails", "FastAPI + CI/CD", "Evaluation (Ragas)", "Deployment capstone"], outcomes: ["GitHub portfolio", "Deployed agent", "Interview-ready stories"], ribbon: "Flagship" },
+  { id: "C", tag: "Track C", title: "Architect", for: "Senior engineers · 5+ years · tech leads · heads of AI", price: "₹1,75,000", duration: "10 weeks · fellowship", blurb: "A working group, not a course. System design for LLM products at scale: advanced RAG, fine-tuning, cost/latency, red-teaming, governance (DPDP Act, EU AI Act). Taught from Riddoff case studies.", modules: ["Hybrid + graph RAG", "LoRA / QLoRA", "Eval at scale · LLM-as-judge", "Cost & latency", "Prompt-injection defence", "Governance & audit", "Build-vs-buy frameworks"], outcomes: ["Architecture dossier", "Riddoff alumni network", "Fellowship credential"], ribbon: "Invitation only" },
 ];
 
 function TrackCard({ t, last }: { t: typeof TRACKS[0]; last: boolean }) {
@@ -398,14 +398,14 @@ function Tracks() {
 
 // ── Syllabus ──────────────────────────────────────────────────────────
 const SYLLABUS_SECTIONS = [
-  { num: "01", title: "The 2026 AI Landscape", weeks: "Wk 01", featured: false, lectures: [["01","Welcome: Why Applied AI & MLOps","Reading · Setup"],["02","Hype vs. Hiring: What 2026 actually pays for","Market study"],["03","Environment: Colab, GitHub, uv, Cursor","Hands-on"]] },
-  { num: "02", title: "AI Literacy & Advanced Prompting", weeks: "Wk 02", featured: false, lectures: [["04","The Science of Prompting: CoT & Few-Shot","Lab"],["05","Beyond Chat: Perplexity, NotebookLM, Deep Research","Workflow"],["06","Hallucinations & Bias: When & why AI fails","Case study"]] },
-  { num: "03", title: "Data Engineering & Experimentation", weeks: "Wk 03–04", featured: false, lectures: [["07","Python for AI: a rapid crash course","Lab"],["08","Data pipelines with Pandas & SQL","Lab"],["09","Experiment tracking with MLflow","Hands-on"],["10","Hugging Face: models, datasets, spaces","Studio"]] },
-  { num: "04", title: "Agents & Orchestration", weeks: "Wk 05–07", featured: true, lectures: [["11","What agents actually are (and are not)","Theory"],["12","Multi-agent teams with CrewAI","Build"],["13","Tool use, function calling, structured outputs","Build"],["14","RAG with ChromaDB: long-term memory","Build"],["14b","LangGraph: state machines for real systems","Build · new 2026"]] },
-  { num: "05", title: "MLOps: Deployment & Containerization", weeks: "Wk 08–10", featured: false, lectures: [["15","Docker basics for AI engineers","Lab"],["16","Containerizing your agent for production","Build"],["16b","FastAPI gateways: async, streaming, auth","Build · new 2026"],["16c","CI/CD for AI systems with GitHub Actions","Build · new 2026"],["17","Monitoring data drift & performance","Lab"]] },
-  { num: "06", title: "Evaluation, Guardrails & Observability", weeks: "Wk 11", featured: false, lectures: [["17b","Evaluation: Ragas, DeepEval, LLM-as-judge","Lab · new 2026"],["17c","Guardrails AI & NeMo Guardrails","Lab · new 2026"],["17d","Observability: Langfuse, cost & token tracking","Lab · new 2026"]] },
-  { num: "07", title: "Ethics, Industry & Career", weeks: "Wk 12", featured: false, lectures: [["18","AI ethics: bias detection with Fairlearn","Lab"],["19","Fintech & healthcare: domain architectures","Case studies"],["20","Navigating the GCC job market","Career"]] },
-  { num: "08", title: "Capstone & Beyond", weeks: "Wk 13–14", featured: false, lectures: [["21","Future-proofing your career in AI","Career"],["22","Ship the capstone: review & defense","Final"]] },
+  { num: "01", title: "The 2026 AI Landscape", weeks: "Wk 01", featured: false, lectures: [["01", "Welcome: Why Applied AI & MLOps", "Reading · Setup"], ["02", "Hype vs. Hiring: What 2026 actually pays for", "Market study"], ["03", "Environment: Colab, GitHub, uv, Cursor", "Hands-on"]] },
+  { num: "02", title: "AI Literacy & Advanced Prompting", weeks: "Wk 02", featured: false, lectures: [["04", "The Science of Prompting: CoT & Few-Shot", "Lab"], ["05", "Beyond Chat: Perplexity, NotebookLM, Deep Research", "Workflow"], ["06", "Hallucinations & Bias: When & why AI fails", "Case study"]] },
+  { num: "03", title: "Data Engineering & Experimentation", weeks: "Wk 03–04", featured: false, lectures: [["07", "Python for AI: a rapid crash course", "Lab"], ["08", "Data pipelines with Pandas & SQL", "Lab"], ["09", "Experiment tracking with MLflow", "Hands-on"], ["10", "Hugging Face: models, datasets, spaces", "Studio"]] },
+  { num: "04", title: "Agents & Orchestration", weeks: "Wk 05–07", featured: true, lectures: [["11", "What agents actually are (and are not)", "Theory"], ["12", "Multi-agent teams with CrewAI", "Build"], ["13", "Tool use, function calling, structured outputs", "Build"], ["14", "RAG with ChromaDB: long-term memory", "Build"], ["14b", "LangGraph: state machines for real systems", "Build · new 2026"]] },
+  { num: "05", title: "MLOps: Deployment & Containerization", weeks: "Wk 08–10", featured: false, lectures: [["15", "Docker basics for AI engineers", "Lab"], ["16", "Containerizing your agent for production", "Build"], ["16b", "FastAPI gateways: async, streaming, auth", "Build · new 2026"], ["16c", "CI/CD for AI systems with GitHub Actions", "Build · new 2026"], ["17", "Monitoring data drift & performance", "Lab"]] },
+  { num: "06", title: "Evaluation, Guardrails & Observability", weeks: "Wk 11", featured: false, lectures: [["17b", "Evaluation: Ragas, DeepEval, LLM-as-judge", "Lab · new 2026"], ["17c", "Guardrails AI & NeMo Guardrails", "Lab · new 2026"], ["17d", "Observability: Langfuse, cost & token tracking", "Lab · new 2026"]] },
+  { num: "07", title: "Ethics, Industry & Career", weeks: "Wk 12", featured: false, lectures: [["18", "AI ethics: bias detection with Fairlearn", "Lab"], ["19", "Fintech & healthcare: domain architectures", "Case studies"], ["20", "Navigating the GCC job market", "Career"]] },
+  { num: "08", title: "Capstone & Beyond", weeks: "Wk 13–14", featured: false, lectures: [["21", "Future-proofing your career in AI", "Career"], ["22", "Ship the capstone: review & defense", "Final"]] },
 ];
 
 function SyllabusRow({ s, defaultOpen }: { s: typeof SYLLABUS_SECTIONS[0]; defaultOpen: boolean }) {
@@ -456,11 +456,11 @@ function Syllabus() {
 const PLACEMENT_DATA: [string, number, string, string][] = [
   ["Bangalore", 48, "₹16.5L", "₹28.0L"],
   ["Hyderabad", 39, "₹14.0L", "₹24.5L"],
-  ["Kochi",     34, "₹12.8L", "₹22.0L"],
-  ["Chennai",   12, "₹13.2L", "₹21.0L"],
+  ["Kochi", 34, "₹12.8L", "₹22.0L"],
+  ["Chennai", 12, "₹13.2L", "₹21.0L"],
   ["Remote / intl.", 9, "₹18.0L", "₹42.0L"],
 ];
-const GCC_PARTNERS = ["Acme Fintech","Nair Health","Backwater Labs","Deccan Cloud","Kochi Data Co.","Coromandel AI","Tritiya Systems","21 more"];
+const GCC_PARTNERS = ["Acme Fintech", "Nair Health", "Backwater Labs", "Deccan Cloud", "Kochi Data Co.", "Coromandel AI", "Tritiya Systems", "21 more"];
 
 function Outcomes() {
   return (
@@ -470,11 +470,11 @@ function Outcomes() {
       <div className="aic-pad aic-out">
         <div style={{ border: "1px solid var(--ink)", background: "var(--paper)" }}>
           {([
-            ["01","A deployed agent","Containerized, instrumented, live on Hugging Face Spaces. URL in your CV."],
-            ["02","A GitHub portfolio","5–7 repos with meaningful commit history, docstrings, and unit tests."],
-            ["03","A capstone defense","A 30-minute recorded design review you can send to any hiring manager."],
-            ["04","Three interview stories","Structured STAR stories for the three hardest bugs you shipped around."],
-            ["05","Riddoff referral","Top-quartile graduates routed to 28 partner GCCs in Kochi, Hyderabad, Bangalore."],
+            ["01", "A deployed agent", "Containerized, instrumented, live on Hugging Face Spaces. URL in your CV."],
+            ["02", "A GitHub portfolio", "5–7 repos with meaningful commit history, docstrings, and unit tests."],
+            ["03", "A capstone defense", "A 30-minute recorded design review you can send to any hiring manager."],
+            ["04", "Three interview stories", "Structured STAR stories for the three hardest bugs you shipped around."],
+            ["05", "Riddoff referral", "Top-quartile graduates routed to 28 partner GCCs in Kochi, Hyderabad, Bangalore."],
           ] as [string, string, string][]).map(([n, title, desc], i, arr) => (
             <div key={n} style={{ display: "grid", gridTemplateColumns: "60px 1fr", gap: 20, padding: "22px 24px", borderBottom: i < arr.length - 1 ? "1px solid var(--rule-strong)" : "none" }}>
               <div style={{ ...serif, fontSize: 24, lineHeight: 1, color: "var(--accent)" }}>{n}</div>
@@ -489,7 +489,7 @@ function Outcomes() {
           <div style={{ ...mono, ...cap, color: "var(--ink-3)", marginBottom: 14 }}>Alumni placement · cohorts 03–06 · n = 142</div>
           <div className="aic-placement" style={{ border: "1px solid var(--ink)", background: "var(--paper)" }}>
             <div style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr 1fr", padding: "14px 18px", background: "var(--ink)", color: "var(--paper)", minWidth: 320 }}>
-              {["City","Placed","Median","Top 10%"].map(h => <div key={h} style={{ ...mono, ...cap }}>{h}</div>)}
+              {["City", "Placed", "Median", "Top 10%"].map(h => <div key={h} style={{ ...mono, ...cap }}>{h}</div>)}
             </div>
             {PLACEMENT_DATA.map(([city, placed, median, top], i, arr) => (
               <div key={city} style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr 1fr 1fr", padding: "14px 18px", borderBottom: i < arr.length - 1 ? "1px solid var(--rule)" : "none", alignItems: "center", minWidth: 320 }}>
@@ -517,9 +517,9 @@ function Outcomes() {
 
 // ── Instructors ───────────────────────────────────────────────────────
 const TEAM = [
-  { name: "Razal Rahman.",    role: "Lead Instructor · Track B", pill: "Systems · AI",    bio: "Ex-principal engineer at a Bangalore fintech. Ten years shipping payment systems; last four building LLM products used by 4M monthly actives. Writes the textbook." },
-  { name: "Melvin Maichle T.",role: "Fellowship Director · Track C", pill: "Web · Design",bio: "Architect at a healthcare AI unicorn. DPDP Act practitioner, former regulator consultant. Runs Riddoff's red-team for client case studies." },
-  { name: "Nandu K.",         role: "Operator Lead · Track A",   pill: "Data · Scientist",bio: "Ran a 40-person BPO floor for six years. Now builds n8n and Lindy workflows for Tier-2 clients in Kochi and Coimbatore. Teaches the non-technical track in plain language." },
+  { name: "Razal Rahman.", role: "Lead Instructor · Track B", pill: "Systems · AI", bio: "Ex-principal engineer at a Bangalore fintech. Ten years shipping payment systems; last four building LLM products used by 4M monthly actives. Writes the textbook." },
+  { name: "Melvin Maichle T.", role: "Fellowship Director · Track C", pill: "Web · Design", bio: "Architect at a healthcare AI unicorn. DPDP Act practitioner, former regulator consultant. Runs Riddoff's red-team for client case studies." },
+  { name: "Nandu K.", role: "Operator Lead · Track A", pill: "Data · Scientist", bio: "Ran a 40-person BPO floor for six years. Now builds n8n and Lindy workflows for Tier-2 clients in Kochi and Coimbatore. Teaches the non-technical track in plain language." },
 ];
 const TESTIMONIALS = [
   { q: "Three weeks in, I deployed my first RAG agent to staging. Four months later I was leading the AI pod at my GCC.", a: "Sreelakshmi V. · Cohort 04 · Kochi" },
@@ -567,15 +567,15 @@ function Instructors() {
 
 // ── Pricing ───────────────────────────────────────────────────────────
 const PLANS = [
-  { n: "Operator", track: "A", p: "₹24,000",    sub: "or 2 × ₹13,000",           featured: false, bullets: ["8 weeks live","No-code toolkit","Freelance playbook","Community for 1 yr"], cta: "Apply" },
-  { n: "Engineer", track: "B", p: "₹65,000",    sub: "or 3 × ₹22,500 · ISA option",featured: true, bullets: ["14 weeks live","Textbook + code","Capstone defense","Placement referral","Community for life"], cta: "Apply" },
-  { n: "Architect",track: "C", p: "₹1,75,000",  sub: "invoiced quarterly",         featured: false, bullets: ["10-week fellowship","Riddoff case studies","Peer group of 12","Credential","Alumni residency"], cta: "Request invite" },
+  { n: "Operator", track: "A", p: "₹24,000", sub: "or 2 × ₹13,000", featured: false, bullets: ["8 weeks live", "No-code toolkit", "Freelance playbook", "Community for 1 yr"], cta: "Apply" },
+  { n: "Engineer", track: "B", p: "₹65,000", sub: "or 3 × ₹22,500 · ISA option", featured: true, bullets: ["14 weeks live", "Textbook + code", "Capstone defense", "Placement referral", "Community for life"], cta: "Apply" },
+  { n: "Architect", track: "C", p: "₹1,75,000", sub: "invoiced quarterly", featured: false, bullets: ["10-week fellowship", "Riddoff case studies", "Peer group of 12", "Credential", "Alumni residency"], cta: "Request invite" },
 ];
 const FINE_PRINT: [string, string][] = [
-  ["Scholarships","30% seats · need-based · auto-considered on apply"],
-  ["ISA (Track B)","0 upfront · 12% of salary for 24 months · capped"],
-  ["Team plans","15% off for groups of 3+ from the same GCC"],
-  ["Refund","100% refund · attend all sessions · 30 days post-grad"],
+  ["Scholarships", "30% seats · need-based · auto-considered on apply"],
+  ["ISA (Track B)", "0 upfront · 12% of salary for 24 months · capped"],
+  ["Team plans", "15% off for groups of 3+ from the same GCC"],
+  ["Refund", "100% refund · attend all sessions · 30 days post-grad"],
 ];
 
 function Pricing() {
@@ -622,14 +622,14 @@ function Pricing() {
 
 // ── FAQ ───────────────────────────────────────────────────────────────
 const FAQ_ITEMS: [string, string][] = [
-  ["Do I need a CS degree?","No. Track B assumes working knowledge of one programming language; we'll bring you up to speed on Python in week 3. Track A assumes none."],
-  ["What if I miss a live session?","Every session is recorded and indexed against the textbook. You can miss up to 4 of 40 sessions in Track B and still qualify for the refund policy."],
-  ["Is this remote or in-person?","Fully remote live. Optional in-person sessions in Kochi once per cohort (capstone demo). Track C fellows meet in person twice."],
-  ["What tools do I need?","A laptop (8GB RAM minimum), a free OpenAI/Anthropic API key for labs, and a GitHub account. We cover API credits for the first two weeks."],
-  ["Will you place me?","We refer — we don't place. Top-quartile graduates get a direct introduction to 28 partner GCCs. The rest is interview work you do, not us."],
-  ["Why is Track C invitation-only?","Because the fellowship teaches from active Riddoff client case studies under NDA. We vet for seniority (5+ years shipping production systems)."],
-  ["Does the textbook come free?","Yes. Physical copy mailed on day 1 for Track B and C. Track A gets the relevant chapters as a non-technical edition."],
-  ["Do you use Claude or ChatGPT?","Both, deliberately. You'll build against Anthropic, OpenAI, and open-source models (via Hugging Face) so you leave model-agnostic."],
+  ["Do I need a CS degree?", "No. Track B assumes working knowledge of one programming language; we'll bring you up to speed on Python in week 3. Track A assumes none."],
+  ["What if I miss a live session?", "Every session is recorded and indexed against the textbook. You can miss up to 4 of 40 sessions in Track B and still qualify for the refund policy."],
+  ["Is this remote or in-person?", "Fully remote live. Optional in-person sessions in Kochi once per cohort (capstone demo). Track C fellows meet in person twice."],
+  ["What tools do I need?", "A laptop (8GB RAM minimum), a free OpenAI/Anthropic API key for labs, and a GitHub account. We cover API credits for the first two weeks."],
+  ["Will you place me?", "We refer — we don't place. Top-quartile graduates get a direct introduction to 28 partner GCCs. The rest is interview work you do, not us."],
+  ["Why is Track C invitation-only?", "Because the fellowship teaches from active Riddoff client case studies under NDA. We vet for seniority (5+ years shipping production systems)."],
+  ["Does the textbook come free?", "Yes. Physical copy mailed on day 1 for Track B and C. Track A gets the relevant chapters as a non-technical edition."],
+  ["Do you use Claude or ChatGPT?", "Both, deliberately. You'll build against Anthropic, OpenAI, and open-source models (via Hugging Face) so you leave model-agnostic."],
 ];
 
 function FAQ() {
