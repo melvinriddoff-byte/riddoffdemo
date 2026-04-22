@@ -19,7 +19,7 @@ const Index = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0" />
               Introducing Rabos ERP
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 sm:mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4 sm:mb-6" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>
               The Future of Smarter{" "}
               <span className="text-yellow-400">RABOS</span>
             </h1>
