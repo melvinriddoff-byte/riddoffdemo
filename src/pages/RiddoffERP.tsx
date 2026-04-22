@@ -88,13 +88,13 @@ const RiddoffERP = () => {
               >
                 <Link
                   to={m.href}
-                  className="block bg-card rounded-xl sm:rounded-2xl p-3 sm:p-5 md:p-6 shadow-card border border-border hover:shadow-elevated transition-shadow duration-300 cursor-pointer group h-full"
+                  className="block bg-card rounded-2xl p-5 sm:p-6 shadow-card border border-border hover:shadow-elevated transition-shadow duration-300 cursor-pointer group h-full"
                 >
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-hover:bg-primary/20 transition-colors">
-                    <m.icon className="text-primary" size={16} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary/20 transition-colors">
+                    <m.icon className="text-primary" size={20} />
                   </div>
-                  <h3 className="font-display text-sm sm:text-base md:text-lg font-bold text-foreground mb-1 sm:mb-2">{m.title}</h3>
-                  <p className="text-xs sm:text-xs md:text-sm text-muted-foreground leading-relaxed hidden sm:block">{m.desc}</p>
+                  <h3 className="font-display text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-2">{m.title}</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
                 </Link>
               </motion.div>
             ))}

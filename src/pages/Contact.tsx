@@ -172,7 +172,7 @@ const Contact = () => {
             </div>
             {[
               { icon: Mail, label: "Email", value: "system@riddoff.com" },
-              { icon: Phone, label: "Phone", value: "+91 8891182030" },
+              { icon: Phone, label: "Phone", value: "+91 9633779968" },
               { icon: MapPin, label: "Office", value: "Thrissur, Kerala" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">

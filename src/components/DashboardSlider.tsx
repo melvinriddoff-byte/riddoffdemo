@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SalesDashboardMockup } from "@/pages/erp/Sales";
@@ -11,24 +11,19 @@ const tabs = [
   { id: "inventory", label: "Inventory", Component: InventoryDashboardMockup },
 ];
 
-const NATURAL_W = 1100;
-const NATURAL_H = 480;
-
 const DashboardSlider = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(0);
-  const [zoom, setZoom] = useState(1);
+  const [zoom, setZoom] = useState(0.75);
 
   useEffect(() => {
     const update = () => {
-      if (!containerRef.current) return;
-      setZoom(Math.min(1, containerRef.current.offsetWidth / NATURAL_W));
+      const w = window.innerWidth;
+      setZoom(w < 480 ? 0.28 : w < 768 ? 0.38 : w < 1024 ? 0.44 : w < 1280 ? 0.75 : 0.88);
     };
     update();
-    const observer = new ResizeObserver(update);
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
   useEffect(() => {
@@ -53,7 +48,7 @@ const DashboardSlider = () => {
   const { Component } = tabs[active];
 
   return (
-    <div ref={containerRef} className="w-full max-w-7xl mx-auto">
+    <div className="w-full max-w-7xl mx-auto">
       {/* Tab bar */}
       <div className="flex justify-center gap-2 mb-8">
         {tabs.map((t, i) => (
@@ -72,10 +67,7 @@ const DashboardSlider = () => {
       </div>
 
       {/* Scaled mockup card */}
-      <div
-        className="rounded-2xl shadow-elevated border border-border overflow-hidden bg-white"
-        style={{ height: Math.round(NATURAL_H * zoom) }}
-      >
+      <div className="rounded-2xl shadow-elevated border border-border overflow-hidden bg-white">
         <AnimatePresence custom={direction} mode="wait">
           <motion.div
             key={tabs[active].id}
@@ -86,7 +78,8 @@ const DashboardSlider = () => {
             exit="exit"
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            <div style={{ zoom, height: NATURAL_H, overflow: "hidden", width: NATURAL_W }}>
+            {/* CSS zoom shrinks both layout and visual size — fixed height clips all dashboards to the same size */}
+            <div style={{ zoom, height: 480, overflow: "hidden" }}>
               <Component />
             </div>
           </motion.div>
