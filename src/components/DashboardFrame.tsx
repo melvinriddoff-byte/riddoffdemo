@@ -33,7 +33,9 @@ const DashboardFrame = ({
   return (
     <div ref={containerRef} className="w-full overflow-hidden rounded-2xl">
       <div style={{ zoom }}>
-        {children}
+        <div style={{ width: naturalWidth }}>
+          {children}
+        </div>
       </div>
     </div>
   );
