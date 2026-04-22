@@ -1,9 +1,72 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Cpu, Target, Rocket } from "lucide-react";
 import nanduImg from "@/components/assets/nandu.jpg";
 import melvinImg from "@/components/assets/melvin.jpg";
 import razalImg from "@/components/assets/razal.jpg";
+
+const introCards = [
+  {
+    icon: Cpu,
+    title: "Applied AI Program",
+    subtitle: "14 weeks · live · production-first.",
+    desc: "A rigorous AI & MLOps curriculum built around a 1,400-page working textbook. Every lecture maps to a chapter. Every chapter maps to a real system engineers ship at work.",
+  },
+  {
+    icon: Target,
+    title: "GCC-Optimised",
+    subtitle: "Built for the hiring panels, not Coursera.",
+    desc: "Curriculum reverse-engineered from 200+ GCC job descriptions across Kochi, Hyderabad, and Bangalore. You learn exactly what interviewers test — and nothing they don't.",
+  },
+  {
+    icon: Rocket,
+    title: "Ship to Production",
+    subtitle: "A deployed agent. A GitHub portfolio. A defense.",
+    desc: "You leave with a containerised multi-agent RAG system live on Hugging Face Spaces, a documented GitHub portfolio, and a 30-minute capstone review you can send to any hiring manager.",
+  },
+];
+
+function CoursePageHero() {
+  return (
+    <>
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
+        <div className="container mx-auto max-w-3xl text-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">
+              AI Course
+            </h1>
+            <p className="font-satoshi text-lg text-muted-foreground">
+              The textbook that ships to production — a 14-week applied AI & MLOps program for engineers who'd rather deploy than read about deploying.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-20 px-4 sm:px-6">
+        <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+          {introCards.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15, duration: 0.5 }}
+              className="bg-card rounded-2xl p-5 sm:p-8 shadow-card border border-border"
+            >
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
+                <item.icon className="text-primary" size={28} />
+              </div>
+              <h3 className="font-melodrama text-xl font-bold text-foreground mb-1">{item.title}</h3>
+              <p className="font-satoshi text-sm font-medium text-primary mb-3">{item.subtitle}</p>
+              <p className="font-satoshi text-muted-foreground leading-relaxed">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
 
 // ── Tokens ───────────────────────────────────────────────────────────
 const WRAP: React.CSSProperties = {
@@ -88,8 +151,8 @@ const STYLES = `
 `;
 
 // ── Primitives ────────────────────────────────────────────────────────
-const mono: React.CSSProperties = { fontFamily: "'General Sans', 'Space Grotesk', sans-serif" };
-const serif: React.CSSProperties = { fontFamily: "'Melodrama', serif" };
+const mono: React.CSSProperties = { fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 600 };
+const serif: React.CSSProperties = { fontFamily: "'Cabinet Grotesk', sans-serif", fontWeight: 700 };
 const cap: React.CSSProperties = { textTransform: "uppercase" as const, letterSpacing: "0.08em", fontSize: 11 };
 
 function Rule({ strong, style }: { strong?: boolean; style?: React.CSSProperties }) {
@@ -150,7 +213,7 @@ function SectionHead({ num, label, title, kicker }: { num: string; label: string
         <div style={{ ...mono, ...cap, color: "var(--ink-3)" }}>{num}</div>
         <div>
           <div style={{ ...mono, ...cap, color: "var(--accent)", marginBottom: 8 }}>{label}</div>
-          <h2 style={{ ...serif, margin: 0, fontSize: "clamp(24px, 4vw, 48px)", lineHeight: .95, letterSpacing: "-0.015em", fontWeight: 400, color: "var(--ink)" }}>{title}</h2>
+          <h2 style={{ ...serif, margin: 0, fontSize: "clamp(24px, 4vw, 48px)", lineHeight: .95, letterSpacing: "-0.015em", color: "var(--ink)" }}>{title}</h2>
           {kicker && <div style={{ marginTop: 14, maxWidth: 620, color: "var(--ink-2)", fontSize: 15, lineHeight: 1.45 }}>{kicker}</div>}
         </div>
       </div>
@@ -220,7 +283,7 @@ function Hero() {
             <Tag>22 Lectures · 14 Weeks</Tag>
             <Tag tone="ghost">Live · Kochi + Remote</Tag>
           </div>
-          <h1 style={{ ...serif, margin: 0, fontSize: "clamp(36px, 5vw, 72px)", lineHeight: .88, letterSpacing: "-0.03em", fontWeight: 400, color: "var(--ink)", overflowWrap: "break-word" as const }}>
+          <h1 style={{ ...serif, margin: 0, fontSize: "clamp(36px, 5vw, 72px)", lineHeight: .88, letterSpacing: "-0.03em", color: "var(--ink)", overflowWrap: "break-word" as const }}>
             The textbook<br />
             <span style={{ fontStyle: "italic", color: "var(--accent)" }}>that ships to</span><br />
             production.
@@ -593,7 +656,7 @@ function Finale() {
     <section className="aic-pad" style={{ background: "var(--ink)", color: "var(--paper)", paddingTop: 100, paddingBottom: 80 }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ ...mono, ...cap, color: "rgba(250,246,236,.5)", marginBottom: 24 }}>07 · End matter</div>
-        <h2 style={{ ...serif, margin: 0, fontSize: "clamp(32px, 5vw, 64px)", lineHeight: .9, letterSpacing: "-0.03em", fontWeight: 400, overflowWrap: "break-word" as const }}>
+        <h2 style={{ ...serif, margin: 0, fontSize: "clamp(32px, 5vw, 64px)", lineHeight: .9, letterSpacing: "-0.03em", overflowWrap: "break-word" as const }}>
           Apply by <span style={{ fontStyle: "italic", color: "#6ab8de" }}>01 May</span>.<br />
           To join the course.
         </h2>
@@ -609,11 +672,12 @@ function Finale() {
 }
 
 // ── Page ──────────────────────────────────────────────────────────────
-export default function AICourse() {
+export default function Careers() {
   return (
     <div style={WRAP}>
       <style>{STYLES}</style>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+        <CoursePageHero />
         <Hero />
         <Tracks />
         <Syllabus />
