@@ -83,6 +83,10 @@ const WRAP: React.CSSProperties = {
 } as React.CSSProperties;
 
 const STYLES = `
+  .aic-img-wrap { position: relative; overflow: hidden; margin-bottom: 20px; border: 1px solid var(--rule-strong); }
+  .aic-img-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; display: block; filter: grayscale(100%); transition: filter 0.4s ease, transform 0.4s ease; }
+  .aic-img-wrap:hover img { filter: grayscale(0%); transform: scale(1.04); }
+
   .aic-pad   { padding-left: 32px; padding-right: 32px; }
   .aic-sh    { display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: baseline; }
   .aic-hero  { display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: start; max-width: 1200px; margin: 0 auto; }
@@ -517,9 +521,9 @@ function Outcomes() {
 
 // ── Instructors ───────────────────────────────────────────────────────
 const TEAM = [
-  { name: "Razal Rahman.", role: "Lead Instructor · Track B", pill: "Systems · AI", bio: "Ex-principal engineer at a Bangalore fintech. Ten years shipping payment systems; last four building LLM products used by 4M monthly actives. Writes the textbook." },
-  { name: "Melvin Maichle T.", role: "Fellowship Director · Track C", pill: "Web · Design", bio: "Architect at a healthcare AI unicorn. DPDP Act practitioner, former regulator consultant. Runs Riddoff's red-team for client case studies." },
-  { name: "Nandu K.", role: "Operator Lead · Track A", pill: "Data · Scientist", bio: "Ran a 40-person BPO floor for six years. Now builds n8n and Lindy workflows for Tier-2 clients in Kochi and Coimbatore. Teaches the non-technical track in plain language." },
+  { name: "Razal Rahman.", role: "Lead Instructor · Track A", pill: "Systems · AI", bio: "CEO at Riddoff Technologies." },
+  { name: "Melvin Maichle T.", role: "Fellowship Director · Track B", pill: "Web · Design", bio: "Product Owner at Riddoff Technologies." },
+  { name: "Nandu K.", role: "Operation Lead · Track C", pill: "Data · Scientist", bio: "Senior Data Manager at Riddoff Technologies." },
 ];
 const TESTIMONIALS = [
   { q: "Three weeks in, I deployed my first RAG agent to staging. Four months later I was leading the AI pod at my GCC.", a: "Sreelakshmi V. · Cohort 04 · Kochi" },
@@ -536,13 +540,15 @@ function Instructors() {
         <div className="aic-inst">
           {TEAM.map((p, i) => (
             <div key={p.name} className={`aic-inst-card${i === TEAM.length - 1 ? " last" : ""}`} style={{ padding: 28 }}>
-              {p.name.startsWith("Nandu") ? (
-                <img src={nanduImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
-              ) : p.name.startsWith("Melvin") ? (
-                <img src={melvinImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
-              ) : (
-                <img src={razalImg} alt={p.name} style={{ width: "100%", aspectRatio: "4 / 5", objectFit: "cover", objectPosition: "top", display: "block", marginBottom: 20, border: "1px solid var(--rule-strong)" }} />
-              )}
+              <div className="aic-img-wrap">
+                {p.name.startsWith("Nandu") ? (
+                  <img src={nanduImg} alt={p.name} />
+                ) : p.name.startsWith("Melvin") ? (
+                  <img src={melvinImg} alt={p.name} />
+                ) : (
+                  <img src={razalImg} alt={p.name} />
+                )}
+              </div>
               <Tag style={{ marginBottom: 14 }}>{p.pill}</Tag>
               <div style={{ ...serif, fontSize: 24, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 8, color: "var(--ink)" }}>{p.name}</div>
               <div style={{ ...mono, ...cap, color: "var(--ink-3)", marginBottom: 14 }}>{p.role}</div>
