@@ -42,8 +42,8 @@ const WRAP: React.CSSProperties = {
 
 const STYLES = `
   .aic-img-wrap { position: relative; overflow: hidden; margin-bottom: 20px; border: 1px solid var(--rule-strong); }
-  .aic-img-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; display: block; transition: transform 0.4s ease; }
-  .aic-img-wrap:hover img { transform: scale(1.04); }
+  .aic-img-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; display: block; transition: transform 0.4s ease, filter 0.4s ease; filter: grayscale(100%); }
+  .aic-img-wrap:hover img { transform: scale(1.04); filter: grayscale(0%); }
   .aic-pad   { padding-left: 32px; padding-right: 32px; }
   .aic-sh    { display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: baseline; }
   .aic-hero  { display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: start; max-width: 1200px; margin: 0 auto; }
