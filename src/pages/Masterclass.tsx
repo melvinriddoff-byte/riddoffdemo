@@ -469,9 +469,9 @@ function Finale() {
           To join the course.
         </h2>
         <div style={{ marginTop: 40, display: "flex", gap: 14, flexWrap: "wrap" as const }}>
-          <Link to="/contact" style={{ textDecoration: "none" }}>
+          <a href="https://ed.riddoff.com/masterclass" style={{ textDecoration: "none" }}>
             <Btn primary style={{ background: "var(--accent)", color: "var(--accent-ink)", borderColor: "var(--accent)" }}>Apply to Join <Arrow /></Btn>
-          </Link>
+          </a>
           <Btn style={{ background: "transparent", color: "var(--paper)", borderColor: "var(--paper)" }}>Book a demo class</Btn>
         </div>
       </div>
@@ -569,9 +569,9 @@ function DossierCard() {
           <div style={{ ...serif, fontSize: 22, letterSpacing: "-0.02em", color: "var(--ink)" }}>₹65,000</div>
           <div style={{ ...mono, fontSize: 11, color: "var(--ink-3)" }}>or 3 × ₹22,500 · ISA available</div>
         </div>
-        <Link to="/contact" style={{ textDecoration: "none" }}>
+        <a href="https://ed.riddoff.com/masterclass" style={{ textDecoration: "none" }}>
           <Btn primary small>Apply <Arrow /></Btn>
-        </Link>
+        </a>
       </div>
     </div>
   );
@@ -596,7 +596,7 @@ function Hero() {
             A 14-week applied AI & MLOps program for engineers who'd rather deploy a RAG agent than read another blog post about one. Built around a 1,400-page working textbook — written, rewritten, and road-tested against real GCC job specs in Kochi, Hyderabad, and Bangalore.
           </div>
           <div style={{ marginTop: 36, display: "flex", gap: 12, flexWrap: "wrap" as const }}>
-            <Link to="/contact" style={{ textDecoration: "none" }}><Btn primary>Apply to Cohort 07 <Arrow /></Btn></Link>
+            <a href="https://ed.riddoff.com/masterclass" style={{ textDecoration: "none" }}><Btn primary>Apply to Cohort 07 <Arrow /></Btn></a>
             <Btn>Download Syllabus (PDF)</Btn>
             <Btn>Watch 3-min overview</Btn>
           </div>

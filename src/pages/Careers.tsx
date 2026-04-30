@@ -18,7 +18,7 @@ import fp12Img from "@/components/assets/fp12.png";
 // Courses Data
 const bootcamps = [
   {
-
+    id: "ai-dropshipping-empire",
     title: "AI Dropshipping Empire",
     sector: "E-commerce & Retail",
     tagline: "Build an AI agent that sources, prices, and sells products across 5 marketplaces in 14 hours.",
@@ -29,6 +29,7 @@ const bootcamps = [
     image: fp1Img,
   },
   {
+    id: "ai-underwriting-engine",
     title: "AI Underwriting Engine",
     sector: "Fintech & Banking",
     tagline: "Build a credit scoring AI that ingests PDFs, pulls APIs, and makes lending decisions in real time.",
@@ -39,6 +40,7 @@ const bootcamps = [
     image: fp2Img,
   },
   {
+    id: "ai-patient-triage-system",
     title: "AI Patient Triage System",
     sector: "Healthcare & Biotech",
     tagline: "Build a multi-stage triage AI that reads medical notes, flags high-risk patients, and routes them to specialists.",
@@ -49,6 +51,7 @@ const bootcamps = [
     image: fp3Img,
   },
   {
+    id: "ai-contract-analyzer",
     title: "AI Contract Analyzer",
     sector: "Legal Tech",
     tagline: "Build an AI that reads contracts, flags risks, and extracts terms automatically for in-house legal teams.",
@@ -59,6 +62,7 @@ const bootcamps = [
     image: fp4Img,
   },
   {
+    id: "ai-carbon-footprint-tracker",
     title: "AI Carbon Footprint Tracker",
     sector: "Climate & Sustainability",
     tagline: "Build an AI that ingests supply chain data and auto-calculates carbon footprints for enterprises.",
@@ -69,6 +73,7 @@ const bootcamps = [
     image: fp5Img,
   },
   {
+    id: "ai-quality-inspector",
     title: "AI Quality Inspector",
     sector: "Manufacturing",
     tagline: "Build a vision AI that detects defects in real-time on factory floors using live camera feeds.",
@@ -82,6 +87,7 @@ const bootcamps = [
 
 const courses = [
   {
+    id: "ai-fundamentals-bootcamp",
     title: "AI Fundamentals Bootcamp",
     category: "Foundations",
     tagline: "Master the foundations of modern AI: LLMs, embeddings, fine-tuning, and prompt engineering.",
@@ -92,6 +98,7 @@ const courses = [
     image: fp7Img,
   },
   {
+    id: "rag-systems-masterclass",
     title: "RAG Systems Masterclass",
     category: "LLM & RAG",
     tagline: "Build production RAG systems: semantic search, chunking strategies, and reranking.",
@@ -102,7 +109,7 @@ const courses = [
     image: fp8Img,
   },
   {
-
+    id: "ai-agents-orchestration",
     title: "AI Agents & Orchestration",
     category: "Agents & Orchestration",
     tagline: "Build multi-agent systems: ReAct, tool calling, agent workflows, and error handling.",
@@ -113,6 +120,7 @@ const courses = [
     image: fp9Img,
   },
   {
+    id: "computer-vision-production",
     title: "Computer Vision for Production",
     category: "Computer Vision",
     tagline: "Build production computer vision systems: detection, segmentation, and deployment.",
@@ -123,6 +131,7 @@ const courses = [
     image: fp10Img,
   },
   {
+    id: "mlops-model-deployment",
     title: "MLOps & Model Deployment",
     category: "MLOps & Deployment",
     tagline: "Ship ML models to production: orchestration, monitoring, serving, and scaling.",
@@ -133,6 +142,7 @@ const courses = [
     image: fp11Img,
   },
   {
+    id: "ai-ecommerce-search-recommendations",
     title: "AI for E-commerce: Search & Recommendations",
     category: "Industry Applications",
     tagline: "Build AI systems for e-commerce: semantic search, personalization, and pricing.",
@@ -150,6 +160,7 @@ const courseCategories = ["All", "Foundations", "LLM & RAG", "Agents & Orchestra
 function CourseCard({ item }: { item: (typeof bootcamps[0] | typeof courses[0]) & { image?: string } }) {
   const oldPrice = Math.round(item.priceLow * 3.4);
   const rating = 4.7;
+  const courseId = (item as any).id;
 
   return (
     <motion.div
@@ -197,9 +208,12 @@ function CourseCard({ item }: { item: (typeof bootcamps[0] | typeof courses[0]) 
             <span className="font-melodrama text-base font-bold text-foreground">₹{item.priceLow.toLocaleString("en-IN")}</span>
             <span className="text-xs text-muted-foreground line-through">₹{oldPrice.toLocaleString("en-IN")}</span>
           </div>
-          <button className="w-full bg-primary text-white font-satoshi text-xs font-semibold py-2 rounded-md hover:bg-primary/90 transition-colors">
+          <a
+            href={`https://ed.riddoff.com/courses/${courseId}`}
+            className="block w-full bg-primary text-white font-satoshi text-xs font-semibold py-2 rounded-md hover:bg-primary/90 transition-colors text-center"
+          >
             Enroll now
-          </button>
+          </a>
         </div>
       </div>
     </motion.div>
