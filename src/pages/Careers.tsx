@@ -237,7 +237,7 @@ function CoursesSection() {
               Choose between intensive 2-day bootcamps with live instructors or self-paced courses you can take anytime. 25+ AI programs across every sector.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-12">
-              <button className="px-6 py-3 bg-primary text-white font-satoshi font-semibold rounded-lg hover:bg-primary/90 transition-colors">
+              <button onClick={() => document.getElementById("ai-course")?.scrollIntoView({ behavior: "smooth" })} className="px-6 py-3 bg-primary text-white font-satoshi font-semibold rounded-lg hover:bg-primary/90 transition-colors">
                 Browse all programs
               </button>
               <button className="px-6 py-3 border border-border text-foreground font-satoshi font-semibold rounded-lg hover:bg-accent transition-colors">
@@ -260,6 +260,20 @@ function CoursesSection() {
               ))}
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Riddoff Masterclass Heading */}
+      <section className="py-8 px-4 sm:px-6 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 border-b border-border">
+        <div className="container mx-auto">
+          <Link to="/masterclass" className="no-underline hover:opacity-80 transition-opacity">
+            <h2 className="font-melodrama text-2xl sm:text-3xl font-bold text-primary mb-2">
+              Riddoff Masterclass
+            </h2>
+            <p className="font-satoshi text-sm sm:text-base text-muted-foreground">
+              The textbook that ships to production — a 14-week applied AI & MLOps program for engineers who'd rather deploy than read about deploying.
+            </p>
+          </Link>
         </div>
       </section>
 
@@ -385,68 +399,6 @@ function CoursesSection() {
         </div>
       </section>
     </div>
-  );
-}
-
-const introCards = [
-  {
-    icon: Cpu,
-    title: "Applied AI Program",
-    subtitle: "14 weeks · live · production-first.",
-    desc: "A rigorous AI & MLOps curriculum built around a 1,400-page working textbook. Every lecture maps to a chapter. Every chapter maps to a real system engineers ship at work.",
-  },
-  {
-    icon: Target,
-    title: "GCC-Optimised",
-    subtitle: "Built for the hiring panels, not Coursera.",
-    desc: "Curriculum reverse-engineered from 200+ GCC job descriptions across Kochi, Hyderabad, and Bangalore. You learn exactly what interviewers test — and nothing they don't.",
-  },
-  {
-    icon: Rocket,
-    title: "Ship to Production",
-    subtitle: "A deployed agent. A GitHub portfolio. A defense.",
-    desc: "You leave with a containerised multi-agent RAG system live on Hugging Face Spaces, a documented GitHub portfolio, and a 30-minute capstone review you can send to any hiring manager.",
-  },
-];
-
-function CoursePageHero() {
-  return (
-    <>
-      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
-        <div className="container mx-auto max-w-3xl text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">
-              AI Course
-            </h1>
-            <p className="font-satoshi text-lg text-muted-foreground">
-              The textbook that ships to production — a 14-week applied AI & MLOps program for engineers who'd rather deploy than read about deploying.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-20 px-4 sm:px-6">
-        <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-          {introCards.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15, duration: 0.5 }}
-              className="bg-card rounded-2xl p-5 sm:p-8 shadow-card border border-border"
-            >
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
-                <item.icon className="text-primary" size={28} />
-              </div>
-              <h3 className="font-melodrama text-xl font-bold text-foreground mb-1">{item.title}</h3>
-              <p className="font-satoshi text-sm font-medium text-primary mb-3">{item.subtitle}</p>
-              <p className="font-satoshi text-muted-foreground leading-relaxed">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-    </>
   );
 }
 
@@ -1064,7 +1016,6 @@ export default function Careers() {
       <style>{STYLES}</style>
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
         <CoursesSection />
-        <CoursePageHero />
         <Hero />
         <Tracks />
         <Syllabus />

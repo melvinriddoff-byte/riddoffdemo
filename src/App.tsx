@@ -24,6 +24,7 @@ import Reports from "./pages/erp/Reports";
 import HRPayroll from "./pages/erp/HRPayroll";
 import Task from "./pages/erp/Task";
 import Careers from "./pages/Careers";
+import Masterclass from "./pages/Masterclass";
 
 const queryClient = new QueryClient();
 
@@ -53,6 +54,7 @@ const App = () => (
             <Route path="/company" element={<Company />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
+            <Route path="/masterclass" element={<Masterclass />} />
             <Route path="/responsive-engine" element={<ResponsiveEngine />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
