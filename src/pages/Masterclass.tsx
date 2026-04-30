@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Cpu, Target, Rocket, Star } from "lucide-react";
+import { Cpu, Target, Rocket, Star, Eye, Users2, Send, Handshake, Clock, Code, Award } from "lucide-react";
 import nanduImg from "@/components/assets/nandu.jpg";
 import melvinImg from "@/components/assets/melvin.jpg";
 import razalImg from "@/components/assets/razal.jpg";

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Zap, BookOpen, Rocket, Star } from "lucide-react";
+import { Zap, BookOpen, Rocket, Star, Eye, Users2, Send, Handshake, Clock, Code, Award } from "lucide-react";
 import fp1Img from "@/components/assets/fp1.png";
 import fp2Img from "@/components/assets/fp2.png";
 import fp3Img from "@/components/assets/fp3.png";
@@ -355,16 +355,16 @@ function CoursesSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {(activeTab === "bootcamps"
               ? [
-                { emoji: "💬", title: "Live demo opens Day 1", desc: "See the finished capstone before you write a line of code." },
-                { emoji: "👥", title: "1 TA per 10 students", desc: "Two TAs circulate during sprints so the instructor never stops." },
-                { emoji: "🚀", title: "Deployed URL by Sunday", desc: "Every student walks out with a portfolio piece." },
-                { emoji: "🤝", title: "28 hiring partners", desc: "Top graduates routed to GCCs in Kochi, Hyderabad, Bangalore." },
+                { icon: Eye, title: "Live demo opens Day 1", desc: "See the finished capstone before you write a line of code." },
+                { icon: Users2, title: "1 TA per 10 students", desc: "Two TAs circulate during sprints so the instructor never stops." },
+                { icon: Send, title: "Deployed URL by Sunday", desc: "Every student walks out with a portfolio piece." },
+                { icon: Handshake, title: "28 hiring partners", desc: "Top graduates routed to GCCs in Kochi, Hyderabad, Bangalore." },
               ]
               : [
-                { emoji: "🎯", title: "Learn at your own pace", desc: "Access materials forever—no deadlines or pressure." },
-                { emoji: "👨‍💻", title: "Hands-on projects", desc: "Build real projects with starter code and templates." },
-                { emoji: "📚", title: "Expert instructors", desc: "Learn from practitioners who've shipped AI in production." },
-                { emoji: "🏆", title: "Career support", desc: "Join alumni network and access the job board." },
+                { icon: Clock, title: "Learn at your own pace", desc: "Access materials forever—no deadlines or pressure." },
+                { icon: Code, title: "Hands-on projects", desc: "Build real projects with starter code and templates." },
+                { icon: BookOpen, title: "Expert instructors", desc: "Learn from practitioners who've shipped AI in production." },
+                { icon: Award, title: "Career support", desc: "Join alumni network and access the job board." },
               ]
             ).map((item) => (
               <motion.div
@@ -374,7 +374,7 @@ function CoursesSection() {
                 transition={{ duration: 0.5 }}
                 className="bg-background rounded-lg p-6 border border-border"
               >
-                <div className="text-3xl mb-3">{item.emoji}</div>
+                <item.icon className="w-8 h-8 text-primary mb-3" />
                 <h3 className="font-melodrama font-semibold text-foreground mb-2">{item.title}</h3>
                 <p className="font-satoshi text-sm text-muted-foreground">{item.desc}</p>
               </motion.div>
