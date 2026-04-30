@@ -263,24 +263,14 @@ function CoursesSection() {
         </div>
       </section>
 
-      {/* Riddoff Masterclass Heading */}
-      <section className="py-8 px-4 sm:px-6 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 border-b border-border">
-        <div className="container mx-auto">
-          <Link to="/masterclass" className="no-underline hover:opacity-80 transition-opacity">
-            <h2 className="font-melodrama text-2xl sm:text-3xl font-bold text-primary mb-2">
-              Riddoff Masterclass
-            </h2>
-            <p className="font-satoshi text-sm sm:text-base text-muted-foreground">
-              The textbook that ships to production — a 14-week applied AI & MLOps program for engineers who'd rather deploy than read about deploying.
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      {/* Tab Navigation */}
+      {/* Navigation Tabs */}
       <div className="sticky top-16 z-40 bg-background border-b border-border">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex gap-8">
+            <Link to="/masterclass" className="py-4 px-2 font-satoshi font-semibold text-sm border-b-2 border-transparent text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 no-underline hover:no-underline">
+              <Rocket size={18} />
+              <span>Riddoff Masterclass</span>
+            </Link>
             {(["bootcamps", "courses"] as const).map((tab) => (
               <button
                 key={tab}
