@@ -1,189 +1,209 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Cpu, Target, Rocket, Star } from "lucide-react";
+import { Cpu, Target, Rocket, Zap, BookOpen, Star } from "lucide-react";
 import nanduImg from "@/components/assets/nandu.jpg";
 import melvinImg from "@/components/assets/melvin.jpg";
 import razalImg from "@/components/assets/razal.jpg";
+import fp1Img from "@/components/assets/fp1.png";
+import fp2Img from "@/components/assets/fp2.png";
+import fp3Img from "@/components/assets/fp3.png";
+import fp4Img from "@/components/assets/fp4.png";
+import fp5Img from "@/components/assets/fp5.png";
+import fp6Img from "@/components/assets/fp6.png";
+import fp7Img from "@/components/assets/fp7.png";
+import fp8Img from "@/components/assets/fp8.png";
+import fp9Img from "@/components/assets/fp9.png";
+import fp10Img from "@/components/assets/fp10.png";
+import fp11Img from "@/components/assets/fp11.png";
+import fp12Img from "@/components/assets/fp12.png";
+
+import aireportsImg from "@/components/assets/aireports.png";
+import newrprtImg from "@/components/assets/newrprt.png";
 
 // Courses Data
 const bootcamps = [
   {
-    code: "EC-01",
+
     title: "AI Dropshipping Empire",
     sector: "E-commerce & Retail",
     tagline: "Build an AI agent that sources, prices, and sells products across 5 marketplaces in 14 hours.",
+    description: "Automate product discovery and pricing. Deploy live seller across multiple marketplaces.",
     hours: 14,
     priceLow: 4999,
     seats: 35,
+    image: fp1Img,
   },
   {
-    code: "FT-02",
     title: "AI Underwriting Engine",
     sector: "Fintech & Banking",
     tagline: "Build a credit scoring AI that ingests PDFs, pulls APIs, and makes lending decisions in real time.",
+    description: "Process loan applications with AI-driven risk assessment. Integrate documents and APIs seamlessly.",
     hours: 14,
     priceLow: 5499,
     seats: 30,
+    image: fp2Img,
   },
   {
-    code: "HC-03",
     title: "AI Patient Triage System",
     sector: "Healthcare & Biotech",
     tagline: "Build a multi-stage triage AI that reads medical notes, flags high-risk patients, and routes them to specialists.",
+    description: "Analyze medical records and prioritize urgent cases. Route patients to appropriate specialists.",
     hours: 14,
     priceLow: 5999,
     seats: 25,
+    image: fp3Img,
   },
   {
-    code: "LT-04",
     title: "AI Contract Analyzer",
     sector: "Legal Tech",
     tagline: "Build an AI that reads contracts, flags risks, and extracts terms automatically for in-house legal teams.",
+    description: "Extract contract terms and identify legal risks. Automate document review for legal teams.",
     hours: 14,
     priceLow: 5499,
     seats: 28,
+    image: fp4Img,
   },
   {
-    code: "CL-05",
     title: "AI Carbon Footprint Tracker",
     sector: "Climate & Sustainability",
     tagline: "Build an AI that ingests supply chain data and auto-calculates carbon footprints for enterprises.",
+    description: "Track supply chain emissions automatically. Calculate carbon impact across operations.",
     hours: 14,
     priceLow: 4999,
     seats: 32,
+    image: fp5Img,
   },
   {
-    code: "MF-06",
     title: "AI Quality Inspector",
     sector: "Manufacturing",
     tagline: "Build a vision AI that detects defects in real-time on factory floors using live camera feeds.",
+    description: "Detect manufacturing defects in real-time. Deploy computer vision on factory floors.",
     hours: 14,
     priceLow: 5999,
     seats: 25,
+    image: fp6Img,
   },
 ];
 
 const courses = [
   {
-    code: "FOUND-01",
     title: "AI Fundamentals Bootcamp",
     category: "Foundations",
     tagline: "Master the foundations of modern AI: LLMs, embeddings, fine-tuning, and prompt engineering.",
+    description: "Learn LLMs, embeddings, and prompt engineering. Foundation for all AI work.",
     hours: 16,
     weeks: 4,
     priceLow: 1999,
+    image: fp7Img,
   },
   {
-    code: "RAG-01",
     title: "RAG Systems Masterclass",
     category: "LLM & RAG",
     tagline: "Build production RAG systems: semantic search, chunking strategies, and reranking.",
+    description: "Master semantic search, chunking, and reranking. Build production RAG systems.",
     hours: 12,
     weeks: 3,
     priceLow: 2499,
+    image: fp8Img,
   },
   {
-    code: "AGENT-01",
+
     title: "AI Agents & Orchestration",
     category: "Agents & Orchestration",
     tagline: "Build multi-agent systems: ReAct, tool calling, agent workflows, and error handling.",
+    description: "Build multi-agent systems with ReAct and tool calling. Handle errors gracefully.",
     hours: 14,
     weeks: 4,
     priceLow: 2799,
+    image: fp9Img,
   },
   {
-    code: "CV-01",
     title: "Computer Vision for Production",
     category: "Computer Vision",
     tagline: "Build production computer vision systems: detection, segmentation, and deployment.",
+    description: "Learn detection and segmentation. Deploy vision models to production.",
     hours: 18,
     weeks: 5,
     priceLow: 2299,
+    image: fp10Img,
   },
   {
-    code: "MLOPS-01",
     title: "MLOps & Model Deployment",
     category: "MLOps & Deployment",
     tagline: "Ship ML models to production: orchestration, monitoring, serving, and scaling.",
+    description: "Orchestrate, monitor, and scale ML models. Ship to production confidently.",
     hours: 16,
     weeks: 4,
     priceLow: 2599,
+    image: fp11Img,
   },
   {
-    code: "INDUSTRY-01",
     title: "AI for E-commerce: Search & Recommendations",
     category: "Industry Applications",
     tagline: "Build AI systems for e-commerce: semantic search, personalization, and pricing.",
+    description: "Build semantic search and recommendation engines. Personalize user experiences.",
     hours: 10,
     weeks: 3,
     priceLow: 1699,
+    image: fp12Img,
   },
 ];
 
 const bootcampSectors = ["All", "E-commerce & Retail", "Fintech & Banking", "Healthcare & Biotech", "Legal Tech", "Climate & Sustainability", "Manufacturing"];
 const courseCategories = ["All", "Foundations", "LLM & RAG", "Agents & Orchestration", "Computer Vision", "MLOps & Deployment", "Industry Applications"];
 
-function CourseCard({ item, type }: { item: typeof bootcamps[0] | typeof courses[0]; type: "bootcamps" | "courses" }) {
-  const [hover, setHover] = useState(false);
-  const rating = 4.7;
+function CourseCard({ item }: { item: (typeof bootcamps[0] | typeof courses[0]) & { image?: string } }) {
   const oldPrice = Math.round(item.priceLow * 3.4);
-  const isBootcamp = type === "bootcamps";
-  const weeks = !isBootcamp && "weeks" in item ? (item as typeof courses[0]).weeks : undefined;
+  const rating = 4.7;
 
   return (
     <motion.div
-      onHoverStart={() => setHover(true)}
-      onHoverEnd={() => setHover(false)}
-      animate={{ y: hover ? -8 : 0 }}
-      className="bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 cursor-pointer flex flex-col h-full"
+      className="bg-card border border-border rounded-lg overflow-hidden transition-shadow duration-300 flex flex-col h-full"
     >
       {/* Cover gradient */}
-      <div className="aspect-video bg-gradient-to-br from-[hsl(206,97%,15%)] to-[hsl(206,97%,10%)] flex items-end p-6 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="45" stroke="white" strokeWidth="1" fill="none" />
-            <circle cx="50" cy="50" r="32" stroke="white" strokeWidth="1" fill="none" />
-            <circle cx="50" cy="50" r="20" stroke="white" strokeWidth="1" fill="none" />
-            <line x1="0" y1="50" x2="100" y2="50" stroke="white" strokeWidth="0.5" />
-            <line x1="50" y1="0" x2="50" y2="100" stroke="white" strokeWidth="0.5" />
-          </svg>
-        </div>
+      <div className="aspect-video flex items-end p-4 text-white relative overflow-hidden bg-muted">
+        {item.image && (
+          <img
+            src={item.image}
+            alt={item.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        )}
         <div className="relative z-10">
-          <div className="text-xs font-mono opacity-75 mb-2">{item.code}</div>
-          <h3 className="font-melodrama text-lg font-bold">{item.title}</h3>
+          {"code" in item && <div className="text-xs font-mono opacity-75 mb-2">{(item as any).code}</div>}
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-4 flex-1 flex flex-col">
-        <p className="text-xs text-muted-foreground mb-3">
+      <div className="p-3 flex-1 flex flex-col">
+        <p className="text-xs text-muted-foreground mb-2">
           {"sector" in item ? item.sector : item.category}
         </p>
-        <h4 className="font-satoshi font-semibold text-sm mb-2 line-clamp-2">{item.title}</h4>
+        <p className="font-satoshi text-xs text-muted-foreground mb-3 line-clamp-2">
+          {"description" in item ? (item as any).description : (item as any).tagline}
+        </p>
 
         {/* Rating */}
         <div className="flex items-center gap-2 mb-3">
           <div className="flex items-center">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} size={12} className={i < Math.floor(rating) ? "fill-amber-400 text-amber-400" : "text-gray-300"} />
+              <Star key={i} size={14} className={i < Math.floor(rating) ? "fill-amber-400 text-amber-400" : "text-gray-300"} />
             ))}
           </div>
           <span className="text-xs text-muted-foreground">{rating}</span>
         </div>
 
-        {/* Duration */}
-        <p className="text-xs text-muted-foreground mb-4">
-          {isBootcamp ? `${item.hours}h live` : `${item.hours}h · ${weeks} weeks`}
-        </p>
+        {/* Heading */}
+        <h3 className="font-melodrama text-lg font-bold text-foreground mb-3">{item.title}</h3>
 
         {/* Price */}
         <div className="mt-auto">
-          <div className="flex items-baseline gap-2 mb-3">
-            <span className="font-melodrama text-lg font-bold text-foreground">₹{item.priceLow.toLocaleString("en-IN")}</span>
+          <div className="flex items-baseline gap-2 mb-2">
+            <span className="font-melodrama text-base font-bold text-foreground">₹{item.priceLow.toLocaleString("en-IN")}</span>
             <span className="text-xs text-muted-foreground line-through">₹{oldPrice.toLocaleString("en-IN")}</span>
           </div>
-          <button className="w-full bg-primary text-white font-satoshi text-sm font-semibold py-2 rounded-md hover:bg-primary/90 transition-colors">
+          <button className="w-full bg-primary text-white font-satoshi text-xs font-semibold py-2 rounded-md hover:bg-primary/90 transition-colors">
             Enroll now
           </button>
         </div>
@@ -254,11 +274,20 @@ function CoursesSection() {
                   setActiveTab(tab);
                   setActiveFilter("All");
                 }}
-                className={`py-4 px-2 font-satoshi font-semibold text-sm border-b-2 transition-colors ${
-                  activeTab === tab ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground"
-                }`}
+                className={`py-4 px-2 font-satoshi font-semibold text-sm border-b-2 transition-colors flex items-center gap-2 ${activeTab === tab ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground"
+                  }`}
               >
-                {tab === "bootcamps" ? "🚀 Live Bootcamps" : "📚 Self-Paced Courses"}
+                {tab === "bootcamps" ? (
+                  <>
+                    <Zap size={18} />
+                    <span>Live Bootcamps</span>
+                  </>
+                ) : (
+                  <>
+                    <BookOpen size={18} />
+                    <span>Self-Paced Courses</span>
+                  </>
+                )}
               </button>
             ))}
           </div>
@@ -273,11 +302,10 @@ function CoursesSection() {
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 rounded-full font-satoshi text-sm font-medium whitespace-nowrap transition-colors ${
-                  activeFilter === cat
-                    ? "bg-foreground text-background"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                }`}
+                className={`px-4 py-2 rounded-full font-satoshi text-sm font-medium whitespace-nowrap transition-colors ${activeFilter === cat
+                  ? "bg-foreground text-background"
+                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                  }`}
               >
                 {cat}
               </button>
@@ -290,16 +318,23 @@ function CoursesSection() {
       <section className="py-12 sm:py-16 px-4 sm:px-6">
         <div className="container mx-auto">
           <div className="flex items-baseline justify-between mb-8">
-            <h2 className="font-melodrama text-2xl sm:text-3xl font-bold text-foreground">
-              {activeTab === "bootcamps" ? "🚀 Live Bootcamps" : "📚 Self-Paced Courses"}
-            </h2>
+            <div className="flex items-center gap-3">
+              {activeTab === "bootcamps" ? (
+                <Zap className="text-primary" size={28} />
+              ) : (
+                <BookOpen className="text-primary" size={28} />
+              )}
+              <h2 className="font-melodrama text-2xl sm:text-3xl font-bold text-foreground">
+                {activeTab === "bootcamps" ? "Live Bootcamps" : "Self-Paced Courses"}
+              </h2>
+            </div>
             <p className="text-sm text-muted-foreground">{filtered.length} programs available</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filtered.map((item, idx) => (
-              <motion.div key={item.code} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.05 }}>
-                <CourseCard item={item} type={activeTab} />
+              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.05 }}>
+                <CourseCard item={item} />
               </motion.div>
             ))}
           </div>
@@ -322,17 +357,17 @@ function CoursesSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {(activeTab === "bootcamps"
               ? [
-                  { emoji: "💬", title: "Live demo opens Day 1", desc: "See the finished capstone before you write a line of code." },
-                  { emoji: "👥", title: "1 TA per 10 students", desc: "Two TAs circulate during sprints so the instructor never stops." },
-                  { emoji: "🚀", title: "Deployed URL by Sunday", desc: "Every student walks out with a portfolio piece." },
-                  { emoji: "🤝", title: "28 hiring partners", desc: "Top graduates routed to GCCs in Kochi, Hyderabad, Bangalore." },
-                ]
+                { emoji: "💬", title: "Live demo opens Day 1", desc: "See the finished capstone before you write a line of code." },
+                { emoji: "👥", title: "1 TA per 10 students", desc: "Two TAs circulate during sprints so the instructor never stops." },
+                { emoji: "🚀", title: "Deployed URL by Sunday", desc: "Every student walks out with a portfolio piece." },
+                { emoji: "🤝", title: "28 hiring partners", desc: "Top graduates routed to GCCs in Kochi, Hyderabad, Bangalore." },
+              ]
               : [
-                  { emoji: "🎯", title: "Learn at your own pace", desc: "Access materials forever—no deadlines or pressure." },
-                  { emoji: "👨‍💻", title: "Hands-on projects", desc: "Build real projects with starter code and templates." },
-                  { emoji: "📚", title: "Expert instructors", desc: "Learn from practitioners who've shipped AI in production." },
-                  { emoji: "🏆", title: "Career support", desc: "Join alumni network and access the job board." },
-                ]
+                { emoji: "🎯", title: "Learn at your own pace", desc: "Access materials forever—no deadlines or pressure." },
+                { emoji: "👨‍💻", title: "Hands-on projects", desc: "Build real projects with starter code and templates." },
+                { emoji: "📚", title: "Expert instructors", desc: "Learn from practitioners who've shipped AI in production." },
+                { emoji: "🏆", title: "Career support", desc: "Join alumni network and access the job board." },
+              ]
             ).map((item) => (
               <motion.div
                 key={item.title}
@@ -431,8 +466,8 @@ const WRAP: React.CSSProperties = {
 
 const STYLES = `
   .aic-img-wrap { position: relative; overflow: hidden; margin-bottom: 20px; border: 1px solid var(--rule-strong); }
-  .aic-img-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; display: block; filter: grayscale(100%); transition: filter 0.4s ease, transform 0.4s ease; }
-  .aic-img-wrap:hover img { filter: grayscale(0%); transform: scale(1.04); }
+  .aic-img-wrap img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; display: block; transition: transform 0.4s ease; }
+  .aic-img-wrap:hover img { transform: scale(1.04); }
 
   .aic-pad   { padding-left: 32px; padding-right: 32px; }
   .aic-sh    { display: grid; grid-template-columns: 80px 1fr; gap: 24px; align-items: baseline; }
@@ -689,9 +724,7 @@ function TrackCard({ t, last }: { t: typeof TRACKS[0]; last: boolean }) {
   return (
     <div
       className={`aic-track${last ? " last" : ""}`}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      style={{ padding: 28, background: t.featured ? "var(--ink)" : hover ? "var(--paper-2)" : "transparent", color: t.featured ? "var(--paper)" : "var(--ink)", position: "relative", minHeight: 640, display: "flex", flexDirection: "column", transition: "background .25s ease" }}
+      style={{ padding: 28, background: t.featured ? "var(--ink)" : "transparent", color: t.featured ? "var(--paper)" : "var(--ink)", position: "relative", minHeight: 640, display: "flex", flexDirection: "column", transition: "background .25s ease" }}
     >
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18 }}>
         <Tag tone={t.featured ? "accent" : "default"}>{t.tag}</Tag>
