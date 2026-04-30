@@ -1,0 +1,66 @@
+{
+  "/EdRiddoffStack/EmailStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:61:28)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/EmailStack/SesSetupInstructions": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SesSetupInstructions"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new EmailStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EmailStack.js:44:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:61:28)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/EmailStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/EmailStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/EmailStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}

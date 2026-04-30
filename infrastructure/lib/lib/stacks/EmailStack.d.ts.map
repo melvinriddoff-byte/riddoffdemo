@@ -1,0 +1,1 @@
+{"version":3,"file":"EmailStack.d.ts","sourceRoot":"","sources":["../../stacks/EmailStack.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,GAAG,MAAM,aAAa,CAAC;AACnC,OAAO,EAAE,SAAS,EAAE,MAAM,YAAY,CAAC;AAEvC,qBAAa,UAAW,SAAQ,GAAG,CAAC,KAAK;gBAC3B,KAAK,EAAE,SAAS,EAAE,EAAE,EAAE,MAAM,EAAE,KAAK,CAAC,EAAE,GAAG,CAAC,UAAU;CAkBjE"}

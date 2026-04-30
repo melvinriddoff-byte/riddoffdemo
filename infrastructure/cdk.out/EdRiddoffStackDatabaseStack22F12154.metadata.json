@@ -1,0 +1,120 @@
+{
+  "/EdRiddoffStack/DatabaseStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:47:25)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/DatabaseStack/RiddoffEdTable": [
+    {
+      "type": "aws:cdk:hasPhysicalName",
+      "data": {
+        "Ref": "RiddoffEdTable8119CF18"
+      }
+    }
+  ],
+  "/EdRiddoffStack/DatabaseStack/TableName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TableName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DatabaseStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/DatabaseStack.js:85:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:47:25)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/DatabaseStack/TableArn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "TableArn"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DatabaseStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/DatabaseStack.js:90:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:47:25)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/DatabaseStack/StreamArn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "StreamArn"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new DatabaseStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/DatabaseStack.js:95:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:47:25)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/DatabaseStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/DatabaseStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/DatabaseStack/RiddoffEdTable/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "RiddoffEdTable8119CF18"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Table2 in aws-cdk-lib...",
+        "new DatabaseStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/DatabaseStack.js:42:22)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:47:25)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/DatabaseStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}

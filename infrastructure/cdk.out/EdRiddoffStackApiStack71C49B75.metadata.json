@@ -1,0 +1,113 @@
+{
+  "/EdRiddoffStack/ApiStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:56:26)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/ApiStack/ApiEndpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ApiEndpoint"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ApiStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/ApiStack.js:63:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:56:26)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/ApiStack/ApiId": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ApiId"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new ApiStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/ApiStack.js:68:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:56:26)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/ApiStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/ApiStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/ApiStack/EdRiddoffApi/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdRiddoffApiAE418CD6"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new HttpApi2 in aws-cdk-lib...",
+        "new ApiStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/ApiStack.js:43:24)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:56:26)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/ApiStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/ApiStack/EdRiddoffApi/DefaultStage/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdRiddoffApiDefaultStage2E219DB8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new HttpApi2 in aws-cdk-lib...",
+        "new ApiStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/ApiStack.js:43:24)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:56:26)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ]
+}

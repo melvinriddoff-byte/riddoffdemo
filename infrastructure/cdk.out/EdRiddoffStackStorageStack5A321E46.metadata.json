@@ -1,0 +1,321 @@
+{
+  "/EdRiddoffStack/StorageStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/SpaBucketName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SpaBucketName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:111:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/ContentBucketName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContentBucketName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:116:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/SpaDistributionDomainName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SpaDistributionDomainName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:121:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/ContentDistributionDomainName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContentDistributionDomainName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:126:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/EdRiddoffSpaBucket/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdRiddoffSpaBucket073482C4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:45:26)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:45:26)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:45:26)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/EdRiddoffContentBucket/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdRiddoffContentBucket34529D99"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:54:30)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/SpaOai/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SpaOai3B55A35F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new OriginAccessIdentity2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:63:24)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/SpaDistribution/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "SpaDistributionD69C39B0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Distribution2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:67:32)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/ContentOai/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContentOaiE358788B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new OriginAccessIdentity2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:88:28)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/ContentCachePolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContentCachePolicyA018752E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new CachePolicy2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:98:30)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/ContentDistribution/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ContentDistribution1BFD83AE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Distribution2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:92:36)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/EdRiddoffSpaBucket/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdRiddoffSpaBucketPolicyEE0B09BB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:45:26)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/EdRiddoffSpaBucket/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdRiddoffSpaBucketAutoDeleteObjectsCustomResource16C43810"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:45:26)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/StorageStack/EdRiddoffContentBucket/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdRiddoffContentBucketPolicy6C77B22A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantRead in aws-cdk-lib...",
+        "new StorageStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/StorageStack.js:91:28)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:53:30)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ]
+}
