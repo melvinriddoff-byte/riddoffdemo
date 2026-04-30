@@ -2,157 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Zap, BookOpen, Rocket, Star, Eye, Users2, Send, Handshake, Clock, Code, Award } from "lucide-react";
-import fp1Img from "@/components/assets/fp1.png";
-import fp2Img from "@/components/assets/fp2.png";
-import fp3Img from "@/components/assets/fp3.png";
-import fp4Img from "@/components/assets/fp4.png";
-import fp5Img from "@/components/assets/fp5.png";
-import fp6Img from "@/components/assets/fp6.png";
-import fp7Img from "@/components/assets/fp7.png";
-import fp8Img from "@/components/assets/fp8.png";
-import fp9Img from "@/components/assets/fp9.png";
-import fp10Img from "@/components/assets/fp10.png";
-import fp11Img from "@/components/assets/fp11.png";
-import fp12Img from "@/components/assets/fp12.png";
-
-// Courses Data
-const bootcamps = [
-  {
-    id: "ai-dropshipping-empire",
-    title: "AI Dropshipping Empire",
-    sector: "E-commerce & Retail",
-    tagline: "Build an AI agent that sources, prices, and sells products across 5 marketplaces in 14 hours.",
-    description: "Automate product discovery and pricing. Deploy live seller across multiple marketplaces.",
-    hours: 14,
-    priceLow: 4999,
-    seats: 35,
-    image: fp1Img,
-  },
-  {
-    id: "ai-underwriting-engine",
-    title: "AI Underwriting Engine",
-    sector: "Fintech & Banking",
-    tagline: "Build a credit scoring AI that ingests PDFs, pulls APIs, and makes lending decisions in real time.",
-    description: "Process loan applications with AI-driven risk assessment. Integrate documents and APIs seamlessly.",
-    hours: 14,
-    priceLow: 5499,
-    seats: 30,
-    image: fp2Img,
-  },
-  {
-    id: "ai-patient-triage-system",
-    title: "AI Patient Triage System",
-    sector: "Healthcare & Biotech",
-    tagline: "Build a multi-stage triage AI that reads medical notes, flags high-risk patients, and routes them to specialists.",
-    description: "Analyze medical records and prioritize urgent cases. Route patients to appropriate specialists.",
-    hours: 14,
-    priceLow: 5999,
-    seats: 25,
-    image: fp3Img,
-  },
-  {
-    id: "ai-contract-analyzer",
-    title: "AI Contract Analyzer",
-    sector: "Legal Tech",
-    tagline: "Build an AI that reads contracts, flags risks, and extracts terms automatically for in-house legal teams.",
-    description: "Extract contract terms and identify legal risks. Automate document review for legal teams.",
-    hours: 14,
-    priceLow: 5499,
-    seats: 28,
-    image: fp4Img,
-  },
-  {
-    id: "ai-carbon-footprint-tracker",
-    title: "AI Carbon Footprint Tracker",
-    sector: "Climate & Sustainability",
-    tagline: "Build an AI that ingests supply chain data and auto-calculates carbon footprints for enterprises.",
-    description: "Track supply chain emissions automatically. Calculate carbon impact across operations.",
-    hours: 14,
-    priceLow: 4999,
-    seats: 32,
-    image: fp5Img,
-  },
-  {
-    id: "ai-quality-inspector",
-    title: "AI Quality Inspector",
-    sector: "Manufacturing",
-    tagline: "Build a vision AI that detects defects in real-time on factory floors using live camera feeds.",
-    description: "Detect manufacturing defects in real-time. Deploy computer vision on factory floors.",
-    hours: 14,
-    priceLow: 5999,
-    seats: 25,
-    image: fp6Img,
-  },
-];
-
-const courses = [
-  {
-    id: "ai-fundamentals-bootcamp",
-    title: "AI Fundamentals Bootcamp",
-    category: "Foundations",
-    tagline: "Master the foundations of modern AI: LLMs, embeddings, fine-tuning, and prompt engineering.",
-    description: "Learn LLMs, embeddings, and prompt engineering. Foundation for all AI work.",
-    hours: 16,
-    weeks: 4,
-    priceLow: 1999,
-    image: fp7Img,
-  },
-  {
-    id: "rag-systems-masterclass",
-    title: "RAG Systems Masterclass",
-    category: "LLM & RAG",
-    tagline: "Build production RAG systems: semantic search, chunking strategies, and reranking.",
-    description: "Master semantic search, chunking, and reranking. Build production RAG systems.",
-    hours: 12,
-    weeks: 3,
-    priceLow: 2499,
-    image: fp8Img,
-  },
-  {
-    id: "ai-agents-orchestration",
-    title: "AI Agents & Orchestration",
-    category: "Agents & Orchestration",
-    tagline: "Build multi-agent systems: ReAct, tool calling, agent workflows, and error handling.",
-    description: "Build multi-agent systems with ReAct and tool calling. Handle errors gracefully.",
-    hours: 14,
-    weeks: 4,
-    priceLow: 2799,
-    image: fp9Img,
-  },
-  {
-    id: "computer-vision-production",
-    title: "Computer Vision for Production",
-    category: "Computer Vision",
-    tagline: "Build production computer vision systems: detection, segmentation, and deployment.",
-    description: "Learn detection and segmentation. Deploy vision models to production.",
-    hours: 18,
-    weeks: 5,
-    priceLow: 2299,
-    image: fp10Img,
-  },
-  {
-    id: "mlops-model-deployment",
-    title: "MLOps & Model Deployment",
-    category: "MLOps & Deployment",
-    tagline: "Ship ML models to production: orchestration, monitoring, serving, and scaling.",
-    description: "Orchestrate, monitor, and scale ML models. Ship to production confidently.",
-    hours: 16,
-    weeks: 4,
-    priceLow: 2599,
-    image: fp11Img,
-  },
-  {
-    id: "ai-ecommerce-search-recommendations",
-    title: "AI for E-commerce: Search & Recommendations",
-    category: "Industry Applications",
-    tagline: "Build AI systems for e-commerce: semantic search, personalization, and pricing.",
-    description: "Build semantic search and recommendation engines. Personalize user experiences.",
-    hours: 10,
-    weeks: 3,
-    priceLow: 1699,
-    image: fp12Img,
-  },
-];
+import { bootcamps, courses } from "@/data/courses";
 
 const bootcampSectors = ["All", "E-commerce & Retail", "Fintech & Banking", "Healthcare & Biotech", "Legal Tech", "Climate & Sustainability", "Manufacturing"];
 const courseCategories = ["All", "Foundations", "LLM & RAG", "Agents & Orchestration", "Computer Vision", "MLOps & Deployment", "Industry Applications"];
@@ -164,24 +14,24 @@ function CourseCard({ item }: { item: (typeof bootcamps[0] | typeof courses[0]) 
 
   return (
     <motion.div
-      className="bg-card border border-border rounded-lg overflow-hidden transition-shadow duration-300 flex flex-col h-full"
+      className="bg-card border border-border rounded-lg overflow-hidden transition-shadow duration-300 flex flex-col h-full hover:shadow-lg hover:border-primary/50 cursor-pointer group"
     >
-      {/* Cover gradient */}
-      <div className="aspect-video flex items-end p-4 text-white relative overflow-hidden bg-muted">
+      {/* Cover - Clickable link */}
+      <Link to={`/courses/${courseId}`} className="aspect-video flex items-end p-4 text-white relative overflow-hidden bg-muted">
         {item.image && (
           <img
             src={item.image}
             alt={item.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         )}
         <div className="relative z-10">
           {"code" in item && <div className="text-xs font-mono opacity-75 mb-2">{(item as any).code}</div>}
         </div>
-      </div>
+      </Link>
 
-      {/* Content */}
-      <div className="p-3 flex-1 flex flex-col">
+      {/* Content - Clickable link to detail page */}
+      <Link to={`/courses/${courseId}`} className="p-3 flex-1 flex flex-col no-underline hover:no-underline">
         <p className="text-xs text-muted-foreground mb-2">
           {"sector" in item ? item.sector : item.category}
         </p>
@@ -200,7 +50,7 @@ function CourseCard({ item }: { item: (typeof bootcamps[0] | typeof courses[0]) 
         </div>
 
         {/* Heading */}
-        <h3 className="font-melodrama text-lg font-bold text-foreground mb-3">{item.title}</h3>
+        <h3 className="font-melodrama text-lg font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
 
         {/* Price */}
         <div className="mt-auto">
@@ -208,13 +58,18 @@ function CourseCard({ item }: { item: (typeof bootcamps[0] | typeof courses[0]) 
             <span className="font-melodrama text-base font-bold text-foreground">₹{item.priceLow.toLocaleString("en-IN")}</span>
             <span className="text-xs text-muted-foreground line-through">₹{oldPrice.toLocaleString("en-IN")}</span>
           </div>
-          <a
-            href={`https://ed.riddoff.com/courses/${courseId}`}
-            className="block w-full bg-primary text-white font-satoshi text-xs font-semibold py-2 rounded-md hover:bg-primary/90 transition-colors text-center"
-          >
-            Enroll now
-          </a>
         </div>
+      </Link>
+
+      {/* Enroll button - Fixed at bottom */}
+      <div className="px-3 pb-3">
+        <a
+          href={`https://ed.riddoff.com/courses/${courseId}`}
+          className="block w-full bg-primary text-white font-satoshi text-xs font-semibold py-2 rounded-md hover:bg-primary/90 transition-colors text-center"
+          onClick={(e) => e.stopPropagation()}
+        >
+          Enroll now
+        </a>
       </div>
     </motion.div>
   );
