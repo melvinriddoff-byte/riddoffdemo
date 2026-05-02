@@ -100,7 +100,7 @@ export default function CourseDetail() {
                   {course.syllabus.map((topic, idx) => (
                     <div key={idx} className="flex items-start gap-3 p-4 bg-secondary rounded-lg">
                       <CheckCircle2 className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                      <span className="text-foreground">{topic}</span>
+                      <span className="text-white">{topic}</span>
                     </div>
                   ))}
                 </div>
@@ -199,7 +199,7 @@ export default function CourseDetail() {
                 {/* Back Link */}
                 <Link
                   to="/careers"
-                  className="w-full text-center py-3 rounded-lg border border-border text-foreground hover:bg-secondary transition-colors font-semibold"
+                  className="w-full text-center py-3 rounded-lg border border-border text-foreground hover:bg-secondary hover:text-white transition-colors font-semibold"
                 >
                   Back to Courses
                 </Link>
