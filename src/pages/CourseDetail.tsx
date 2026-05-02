@@ -138,9 +138,9 @@ export default function CourseDetail() {
             >
               <div className="sticky top-24 bg-card border border-border rounded-lg p-8 shadow-lg">
                 {/* Pricing */}
-                <div className="mb-8">
-                  <p className="text-sm text-muted-foreground mb-2">Price</p>
-                  <div className="flex items-baseline gap-3 mb-4">
+                <div className="mb-6">
+                  <p className="text-sm text-muted-foreground mb-1">Price</p>
+                  <div className="flex items-baseline gap-3 mb-2">
                     <span className="font-melodrama text-4xl font-bold text-foreground">
                       ₹{course.priceLow.toLocaleString("en-IN")}
                     </span>
