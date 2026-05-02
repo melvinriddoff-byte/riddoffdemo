@@ -54,7 +54,7 @@ function CourseCard({ item }: { item: (typeof bootcamps[0] | typeof courses[0]) 
 
         {/* Price */}
         <div className="mt-auto">
-          <div className="flex items-baseline gap-2 mb-2">
+          <div className="flex items-baseline gap-2">
             <span className="font-melodrama text-base font-bold text-foreground">₹{item.priceLow.toLocaleString("en-IN")}</span>
             <span className="text-xs text-muted-foreground line-through">₹{oldPrice.toLocaleString("en-IN")}</span>
           </div>
