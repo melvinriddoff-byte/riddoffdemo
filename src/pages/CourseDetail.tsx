@@ -199,7 +199,7 @@ export default function CourseDetail() {
                 {/* Back Link */}
                 <Link
                   to="/careers"
-                  className="w-full text-center py-3 rounded-lg border border-border text-foreground hover:bg-secondary hover:text-white transition-colors font-semibold"
+                  className="w-full bg-foreground text-white font-semibold py-3 rounded-lg hover:bg-foreground/90 transition-colors flex items-center justify-center gap-2"
                 >
                   Back to Courses
                 </Link>
