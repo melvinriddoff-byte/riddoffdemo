@@ -63,13 +63,13 @@ function CourseCard({ item }: { item: (typeof bootcamps[0] | typeof courses[0]) 
 
       {/* Enroll button - Fixed at bottom */}
       <div className="px-3 pb-3">
-        <a
-          href={`https://ed.riddoff.com/courses/${courseId}`}
-          className="block w-full bg-primary text-white font-satoshi text-xs font-semibold py-2 rounded-md hover:bg-primary/90 transition-colors text-center"
+        <Link
+          to={`/courses/${courseId}`}
+          className="block w-full bg-primary text-white font-satoshi text-xs font-semibold py-2 rounded-md hover:bg-primary/90 transition-colors text-center no-underline"
           onClick={(e) => e.stopPropagation()}
         >
           Enroll now
-        </a>
+        </Link>
       </div>
     </motion.div>
   );
