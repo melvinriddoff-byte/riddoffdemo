@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Users, Target, PhoneCall, Mail, Clock, Star, Calendar, Search, Settings, Bell, RefreshCw, UserPlus, ChevronDown, TrendingUp, TrendingDown } from "lucide-react";
+import DashboardFrame from "@/components/DashboardFrame";
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const features = [
@@ -114,8 +115,8 @@ const CRMDashboardMockup = () => (
       {/* Main */}
       <div className="flex-1 p-5 bg-gray-50/40 overflow-hidden">
         {/* Top stat row */}
-        <div className="grid grid-cols-5 gap-3 mb-4">
-          <div className="bg-white rounded-xl p-4 border border-gray-100 col-span-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mb-4">
+          <div className="bg-white rounded-xl p-4 border border-gray-100 col-span-1 sm:col-span-1">
             <p className="text-2xl font-bold text-foreground">36</p>
             <p className="text-[11px] text-green-600 flex items-center gap-0.5 mt-1"><TrendingUp size={10} /> +5.2% vs last period</p>
           </div>
@@ -143,7 +144,7 @@ const CRMDashboardMockup = () => (
         </div>
 
         {/* Charts row */}
-        <div className="grid grid-cols-2 gap-4 mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
           {/* Payroll chart */}
           <div className="bg-white rounded-xl border border-gray-100 p-4">
             <div className="flex items-start justify-between mb-1">
@@ -219,7 +220,7 @@ const CRMDashboardMockup = () => (
         </div>
 
         {/* Bottom row */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Employment Status */}
           <div className="bg-white rounded-xl border border-gray-100 p-5">
             <p className="text-sm font-bold text-foreground mb-4">Employment Status</p>
@@ -281,12 +282,12 @@ export { CRMDashboardMockup };
 
 const CRM = () => (
   <div>
-    <section className="py-24 md:py-32 px-6 bg-gradient-hero">
+    <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
       <div className="container mx-auto max-w-3xl text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-satoshi font-medium mb-6">Rabos ERP — Module</span>
-          <h1 className="font-melodrama text-4xl md:text-6xl font-extrabold text-foreground mb-6">CRM</h1>
-          <p className="font-satoshi text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <span className="inline-block bg-primary/10 text-primary px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-satoshi font-medium mb-4 sm:mb-6">Rabos ERP — Module</span>
+          <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">CRM</h1>
+          <p className="font-satoshi text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
             Build deeper customer relationships with a CRM that connects every interaction to a complete picture of your business.
           </p>
         </motion.div>
@@ -294,7 +295,7 @@ const CRM = () => (
     </section>
 
     {/* Dashboard Mockup */}
-    <section className="py-10 px-6 -mt-4">
+    <section className="py-6 sm:py-10 px-3 sm:px-6 -mt-2 sm:-mt-4">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -302,7 +303,9 @@ const CRM = () => (
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <CRMDashboardMockup />
+          <DashboardFrame naturalWidth={900}>
+            <CRMDashboardMockup />
+          </DashboardFrame>
         </motion.div>
       </div>
     </section>

@@ -14,9 +14,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Syne', 'sans-serif'],
-        melodrama: ['Melodrama', 'serif'],
-        satoshi: ['General Sans', 'sans-serif'],
+        display: ['Cabinet Grotesk', 'sans-serif'],
+        melodrama: ['Cabinet Grotesk', 'sans-serif'],
+        satoshi: ['Cabinet Grotesk', 'sans-serif'],
         body: ['Space Grotesk', 'sans-serif'],
       },
       colors: {

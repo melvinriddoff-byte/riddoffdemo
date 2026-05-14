@@ -25,10 +25,10 @@ const sections = [
 const Company = () => (
   <div>
     {/* Hero */}
-    <section className="py-24 md:py-32 px-6 bg-gradient-hero">
+    <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
       <div className="container mx-auto max-w-3xl text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <h1 className="font-melodrama text-4xl md:text-6xl font-extrabold text-foreground mb-6">About</h1>
+          <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">About</h1>
           <p className="font-satoshi text-lg text-muted-foreground">
             Why Riddoff exists and how we think about building technology.
           </p>
@@ -37,8 +37,8 @@ const Company = () => (
     </section>
 
     {/* Sections */}
-    <section className="py-20 px-6">
-      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="py-12 sm:py-20 px-4 sm:px-6">
+      <div className="container mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
         {sections.map((item, i) => (
           <motion.div
             key={item.title}
@@ -46,7 +46,7 @@ const Company = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.15, duration: 0.5 }}
-            className="bg-card rounded-2xl p-8 shadow-card border border-border"
+            className="bg-card rounded-2xl p-5 sm:p-8 shadow-card border border-border"
           >
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
               <item.icon className="text-primary" size={28} />
@@ -60,7 +60,7 @@ const Company = () => (
     </section>
 
     {/* Quote */}
-    <section className="py-20 px-6" style={{ backgroundColor: "#013a63" }}>
+    <section className="py-12 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: "#013a63" }}>
       <div className="container mx-auto max-w-3xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

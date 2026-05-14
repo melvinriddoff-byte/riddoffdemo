@@ -22,18 +22,18 @@ const Contact = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="py-24 md:py-32 px-6 bg-gradient-hero">
+      <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
         <div className="container mx-auto max-w-3xl text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <h1 className="font-melodrama text-4xl md:text-6xl font-extrabold text-foreground mb-6">Contact</h1>
+            <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">Contact</h1>
             <p className="text-lg text-muted-foreground font-satoshi">Let's discuss how Riddoff can transform your operations.</p>
           </motion.div>
         </div>
       </section>
 
       {/* Main content */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <section className="py-12 sm:py-20 px-4 sm:px-6">
+        <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12">
 
           {/* Contact form */}
           <motion.div
@@ -43,7 +43,7 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2"
           >
-            <div className="bg-muted/40 rounded-2xl p-8 md:p-10 border border-border">
+            <div className="bg-muted/40 rounded-2xl p-4 sm:p-8 md:p-10 border border-border">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name + Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -172,7 +172,7 @@ const Contact = () => {
             </div>
             {[
               { icon: Mail, label: "Email", value: "system@riddoff.com" },
-              { icon: Phone, label: "Phone", value: "+91 8891182030" },
+              { icon: Phone, label: "Phone", value: "+91 9633779968" },
               { icon: MapPin, label: "Office", value: "Thrissur, Kerala" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">

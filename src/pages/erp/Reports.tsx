@@ -5,6 +5,7 @@ import {
   Search, Calendar, RefreshCw, ChevronDown, Eye, Filter, Plus,
   Minus, Send, AlertTriangle,
 } from "lucide-react";
+import DashboardFrame from "@/components/DashboardFrame";
 
 const steps = [
   {
@@ -87,17 +88,17 @@ export const ReportsDashboardMockup = () => (
           <p className="text-[11px] text-muted-foreground">View and manage all your business reports</p>
         </div>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap justify-end">
         <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary text-xs font-medium">
           <LayoutDashboard size={11} /> Dashboards <span className="bg-primary text-white rounded-full px-1.5 text-[10px]">3</span>
         </button>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs font-medium">
+        <button className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs font-medium">
           <Clock size={11} /> Scheduled
         </button>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs font-medium">
+        <button className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gray-200 text-gray-600 text-xs font-medium">
           <BarChart3 size={11} /> Analytics
         </button>
-        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600 text-xs ml-2">
+        <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-gray-200 text-gray-600 text-xs ml-2">
           <Calendar size={11} /> 1 – 28 Feb
         </div>
         <Search size={15} className="text-gray-400 ml-1" />
@@ -145,7 +146,7 @@ export const ReportsDashboardMockup = () => (
       {/* Main content */}
       <div className="flex-1 p-6 min-w-0">
         {/* Stats */}
-        <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           {[
             { label: "Total Reports", value: "24", sub: "All time", icon: BarChart3 },
             { label: "Scheduled", value: "8", sub: "Auto-delivery active", icon: Clock },
@@ -183,7 +184,8 @@ export const ReportsDashboardMockup = () => (
             </div>
           </div>
 
-          <table className="w-full">
+          <div className="overflow-x-auto">
+          <table className="w-full min-w-[560px]">
             <thead>
               <tr className="border-b border-gray-100">
                 {["REPORT NAME", "TYPE", "LAST RUN", "NEXT RUN", "STATUS", "ACTIONS"].map((h) => (
@@ -208,13 +210,14 @@ export const ReportsDashboardMockup = () => (
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
 
     </div>
 
       {/* AI Chat — absolute overlay, bottom-right of dashboard */}
-      <div className="absolute bottom-4 right-4 flex flex-col w-64 rounded-2xl shadow-2xl border border-gray-200 overflow-hidden bg-white" style={{ height: 400 }}>
+      <div className="hidden sm:flex absolute bottom-4 right-4 flex-col w-64 rounded-2xl shadow-2xl border border-gray-200 overflow-hidden bg-white" style={{ height: 400 }}>
         {/* Header */}
         <div className="flex items-center justify-between px-3 py-2.5 bg-[#1a2744] shrink-0">
           <div className="flex items-center gap-2">
@@ -289,12 +292,12 @@ export const ReportsDashboardMockup = () => (
 
 const Reports = () => (
   <div>
-    <section className="py-24 md:py-32 px-6 bg-gradient-hero">
+    <section className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 bg-gradient-hero">
       <div className="container mx-auto max-w-3xl text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-satoshi font-medium mb-6">Rabos ERP — Module</span>
-          <h1 className="font-melodrama text-4xl md:text-6xl font-extrabold text-foreground mb-6">Reports</h1>
-          <p className="font-satoshi text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <span className="inline-block bg-primary/10 text-primary px-4 py-1.5 rounded-full text-xs sm:text-sm font-satoshi font-medium mb-4 sm:mb-6">Rabos ERP — Module</span>
+          <h1 className="font-melodrama text-3xl sm:text-4xl md:text-6xl font-extrabold text-foreground mb-4 sm:mb-6">Reports</h1>
+          <p className="font-satoshi text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
             Turn your operational data into actionable intelligence with real-time dashboards, custom reports, and automated delivery.
           </p>
         </motion.div>
@@ -305,20 +308,22 @@ const Reports = () => (
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-14 -mx-6 md:-mx-16 lg:-mx-32 xl:-mx-48"
         >
-          <ReportsDashboardMockup />
+          <DashboardFrame naturalWidth={900}>
+            <ReportsDashboardMockup />
+          </DashboardFrame>
         </motion.div>
       </div>
     </section>
 
     {/* Workflow Section */}
-    <section className="py-24 px-6 bg-gradient-to-b from-gray-50/0 to-gray-50/50">
+    <section className="py-14 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-gray-50/0 to-gray-50/50">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-20">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="inline-block px-4 py-1.5 rounded-full border border-border bg-white text-sm font-satoshi font-medium mb-4 text-muted-foreground shadow-sm">
               Process
             </span>
-            <h2 className="font-melodrama text-3xl md:text-5xl font-bold text-foreground mb-5">Reports Workflow</h2>
+            <h2 className="font-melodrama text-2xl sm:text-3xl md:text-5xl font-bold text-foreground mb-3 sm:mb-5">Reports Workflow</h2>
             <p className="font-satoshi text-lg text-muted-foreground max-w-2xl mx-auto">
               A structured pipeline that transforms raw operational data into clear, actionable intelligence.
             </p>
@@ -348,30 +353,30 @@ const Reports = () => (
 
                   {/* Left Side Content */}
                   <div className={`flex-1 w-full md:w-1/2 ${isEven ? 'md:pr-16 md:text-right' : 'md:hidden'}`}>
-                    <div className="bg-card p-8 rounded-3xl shadow-card border border-border hover:shadow-elevated transition-all duration-300 relative z-20">
+                    <div className="bg-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card border border-border hover:shadow-elevated transition-all duration-300 relative z-20">
                       <div className="md:hidden w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
                         <step.icon className="text-primary" size={24} />
                       </div>
                       <div className={`flex items-center gap-3 mb-4 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
                         {!isEven && <span className="text-sm font-bold text-primary/50">0{i + 1}</span>}
-                        <h3 className="font-melodrama text-2xl font-bold text-foreground">{step.title}</h3>
+                        <h3 className="font-melodrama text-lg sm:text-2xl font-bold text-foreground">{step.title}</h3>
                         {isEven && <span className="text-sm font-bold text-primary/50">0{i + 1}</span>}
                       </div>
-                      <p className="font-satoshi text-muted-foreground leading-relaxed">{step.desc}</p>
+                      <p className="font-satoshi text-sm sm:text-base text-muted-foreground leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
 
                   {/* Right Side Content */}
                   <div className={`flex-1 w-full md:w-1/2 ${!isEven ? 'md:pl-16 text-left' : 'md:hidden'}`}>
-                    <div className="bg-card p-8 rounded-3xl shadow-card border border-border hover:shadow-elevated transition-all duration-300 relative z-20">
+                    <div className="bg-card p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-card border border-border hover:shadow-elevated transition-all duration-300 relative z-20">
                       <div className="md:hidden w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-5">
                         <step.icon className="text-primary" size={24} />
                       </div>
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-sm font-bold text-primary/50">0{i + 1}</span>
-                        <h3 className="font-melodrama text-2xl font-bold text-foreground">{step.title}</h3>
+                        <h3 className="font-melodrama text-lg sm:text-2xl font-bold text-foreground">{step.title}</h3>
                       </div>
-                      <p className="font-satoshi text-muted-foreground leading-relaxed">{step.desc}</p>
+                      <p className="font-satoshi text-sm sm:text-base text-muted-foreground leading-relaxed">{step.desc}</p>
                     </div>
                   </div>
                 </motion.div>

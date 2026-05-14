@@ -14,6 +14,17 @@ const tabs = [
 const DashboardSlider = () => {
   const [active, setActive] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [zoom, setZoom] = useState(0.75);
+
+  useEffect(() => {
+    const update = () => {
+      const w = window.innerWidth;
+      setZoom(w < 480 ? 0.28 : w < 768 ? 0.38 : w < 1024 ? 0.44 : w < 1280 ? 0.75 : 0.88);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,7 +48,7 @@ const DashboardSlider = () => {
   const { Component } = tabs[active];
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
+    <div className="w-full max-w-7xl mx-auto">
       {/* Tab bar */}
       <div className="flex justify-center gap-2 mb-8">
         {tabs.map((t, i) => (
@@ -67,8 +78,8 @@ const DashboardSlider = () => {
             exit="exit"
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
-            {/* CSS zoom shrinks both layout and visual size — content fits naturally */}
-            <div style={{ zoom: 0.52 }}>
+            {/* CSS zoom shrinks both layout and visual size — fixed height clips all dashboards to the same size */}
+            <div style={{ zoom, height: 480, overflow: "hidden" }}>
               <Component />
             </div>
           </motion.div>

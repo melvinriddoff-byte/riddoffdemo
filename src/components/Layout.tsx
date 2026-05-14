@@ -1,7 +1,7 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Instagram, Linkedin } from "lucide-react";
-import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
+import { Instagram, Linkedin, ArrowUp } from "lucide-react";
+import { motion, AnimatePresence, useScroll, useTransform, useSpring, useMotionTemplate } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 
@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Solutions", href: "/solutions" },
   { label: "Platforms", href: "/platforms" },
   { label: "Industries", href: "/industries" },
+  { label: "Careers", href: "/careers" },
   { label: "About", href: "/company" },
   { label: "Contact", href: "/contact" },
 ];
@@ -18,9 +19,15 @@ const springConfig = { stiffness: 90, damping: 20, mass: 0.6 };
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [atTop, setAtTop] = useState(true);
   const location = useLocation();
 
   const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const unsub = scrollY.on("change", (v) => setAtTop(v < 40));
+    return unsub;
+  }, [scrollY]);
 
   // All values interpolated continuously from scroll position — no binary state snap
   const rawTop      = useTransform(scrollY, [0, 80], [0, 14]);
@@ -31,6 +38,7 @@ const Navbar = () => {
   const rawShadowOp = useTransform(scrollY, [0, 80], [0, 1]);
   const rawHeight   = useTransform(scrollY, [0, 80], [64, 48]);
   const rawFontSize = useTransform(scrollY, [0, 80], [22, 18]);
+  const rawGap      = useTransform(scrollY, [0, 80], [0, 32]);
 
   const top      = useSpring(rawTop,      springConfig);
   const radius   = useSpring(rawRadius,   springConfig);
@@ -40,6 +48,8 @@ const Navbar = () => {
   const shadowOp = useSpring(rawShadowOp, springConfig);
   const height   = useSpring(rawHeight,   springConfig);
   const fontSize = useSpring(rawFontSize, springConfig);
+  const gap      = useSpring(rawGap,      springConfig);
+  const width    = useMotionTemplate`calc(100% - ${gap}px)`;
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
@@ -50,23 +60,21 @@ const Navbar = () => {
           top,
           left: "50%",
           x: "-50%",
-          width: "calc(100% - 32px)",
+          width,
           maxWidth: maxW,
           borderRadius: radius,
           paddingLeft: pad,
           paddingRight: pad,
           backdropFilter: "blur(20px) saturate(180%)",
           WebkitBackdropFilter: "blur(20px) saturate(180%)",
-          backgroundColor: glassOp.get() > 0.05
-            ? `rgba(255,255,255,${0.22})`
-            : "rgba(255,255,255,0)",
+          backgroundColor: atTop ? "hsl(206, 97%, 15%)" : "rgba(255,255,255,0)",
         }}
       >
-        {/* Glass tint layer — opacity driven by scroll */}
+        {/* Glass tint layer — fades in on scroll */}
         <motion.div
           className="absolute inset-0 pointer-events-none"
           style={{
-            opacity: glassOp,
+            opacity: atTop ? 0 : glassOp,
             background: "rgba(255,255,255,0.22)",
             boxShadow: "0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.7), inset 0 -1px 0 rgba(255,255,255,0.15)",
             borderRadius: "inherit",
@@ -87,7 +95,7 @@ const Navbar = () => {
           style={{ height }}
         >
           <motion.div style={{ fontSize }}>
-            <Link to="/" className="font-satoshi font-bold text-foreground tracking-tight">
+            <Link to="/" className={`font-satoshi font-bold tracking-tight transition-colors duration-300 ${atTop ? "text-white" : "text-foreground"}`}>
               Riddoff
             </Link>
           </motion.div>
@@ -98,13 +106,15 @@ const Navbar = () => {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`font-satoshi text-sm font-medium transition-colors duration-200 hover:text-primary relative group ${location.pathname === link.href ? "text-primary" : "text-muted-foreground"
-                  }`}
+                className={`font-satoshi text-sm font-medium transition-colors duration-200 relative group ${
+                  atTop
+                    ? location.pathname === link.href ? "text-white" : "text-white/65 hover:text-white"
+                    : location.pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"
+                }`}
               >
                 {link.label}
                 <span
-                  className={`absolute -bottom-0.5 left-0 h-px bg-primary transition-all duration-300 ${location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
+                  className={`absolute -bottom-0.5 left-0 h-px transition-all duration-300 ${atTop ? "bg-white" : "bg-primary"} ${location.pathname === link.href ? "w-full" : "w-0 group-hover:w-full"}`}
                 />
               </Link>
             ))}
@@ -113,7 +123,9 @@ const Navbar = () => {
           <div className="hidden md:flex items-center">
             <Link
               to="/contact"
-              className="font-satoshi bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-primary/90 transition-colors"
+              className={`font-satoshi px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+                atTop ? "bg-white text-[#012a4a] hover:bg-white/90" : "bg-primary text-white hover:bg-primary/90"
+              }`}
             >
               Start free trial
             </Link>
@@ -122,7 +134,7 @@ const Navbar = () => {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden text-foreground"
+            className={`md:hidden transition-colors ${atTop ? "text-white" : "text-foreground"}`}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -165,10 +177,10 @@ const Navbar = () => {
 };
 
 const Footer = () => (
-  <footer className="bg-secondary text-secondary-foreground py-16">
-    <div className="container mx-auto px-6">
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-x-4 gap-y-6">
-        <div className="col-span-2 md:col-span-1">
+  <footer className="bg-secondary text-secondary-foreground py-10 sm:py-16">
+    <div className="container mx-auto px-4 sm:px-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-8">
+        <div className="col-span-2 sm:col-span-3 md:col-span-1">
           <h3 className="font-melodrama text-xl font-bold mb-4">Riddoff</h3>
           <p className="text-secondary-foreground/70 text-sm leading-relaxed">
             Enterprise automation that runs<br />businesses, not just interfaces.
@@ -220,12 +232,41 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <div className="font-melodrama border-t border-secondary-foreground/10 mt-12 pt-8 text-center text-sm text-secondary-foreground/50">
+      <div className="font-melodrama border-t border-secondary-foreground/10 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-secondary-foreground/50">
         © 2026 Riddoff. All rights reserved.
       </div>
     </div>
   </footer>
 );
+
+const ScrollToTop = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {visible && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+          transition={{ duration: 0.2 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-5 right-5 sm:bottom-7 sm:right-7 z-50 w-10 h-10 sm:w-11 sm:h-11 bg-secondary text-white flex items-center justify-center rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp size={18} className="sm:hidden" />
+          <ArrowUp size={20} className="hidden sm:block" />
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+};
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -235,6 +276,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
         {children}
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 };

@@ -1,0 +1,21 @@
+{
+  "version": "53.0.0",
+  "files": {
+    "45621459c1dee7506267f1c8677199674e1c283aad14796a0f3fcc5b0810f30f": {
+      "displayName": "EdRiddoffStackApiStack71C49B75 Template",
+      "source": {
+        "path": "EdRiddoffStackApiStack71C49B75.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-ap-south-1-fd246d30": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-ap-south-1",
+          "objectKey": "45621459c1dee7506267f1c8677199674e1c283aad14796a0f3fcc5b0810f30f.json",
+          "region": "ap-south-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-ap-south-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

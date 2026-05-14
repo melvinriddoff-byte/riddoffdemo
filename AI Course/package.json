@@ -1,0 +1,10 @@
+{
+  "name": "ai-course-landing-page",
+  "version": "1.0.0",
+  "description": "Riddoff Applied AI Landing Page",
+  "scripts": {
+    "start": "npx serve -l 3000",
+    "dev": "npx serve -l 3000"
+  },
+  "dependencies": {}
+}

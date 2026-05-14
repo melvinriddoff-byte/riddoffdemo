@@ -1,0 +1,22 @@
+{
+  "app": "node dist/bin/ed-riddoff.js",
+  "watch": {
+    "include": [
+      "**"
+    ],
+    "exclude": [
+      "README.md",
+      "cdk*.json",
+      "**/*.d.ts",
+      "node_modules",
+      "dist/**/*.js",
+      "dist/**/*.js.map"
+    ]
+  },
+  "context": {
+    "availability-zones:account=<current-account>:region=ap-south-1": [
+      "ap-south-1a",
+      "ap-south-1b"
+    ]
+  }
+}

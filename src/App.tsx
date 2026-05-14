@@ -13,6 +13,7 @@ import Industries from "./pages/Industries";
 import Company from "./pages/Company";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ResponsiveEngine from "./pages/ResponsiveEngine";
 import Sales from "./pages/erp/Sales";
 import CRM from "./pages/erp/CRM";
 import Procurement from "./pages/erp/Procurement";
@@ -22,6 +23,9 @@ import Accounts from "./pages/erp/Accounts";
 import Reports from "./pages/erp/Reports";
 import HRPayroll from "./pages/erp/HRPayroll";
 import Task from "./pages/erp/Task";
+import Careers from "./pages/Careers";
+import CourseDetail from "./pages/CourseDetail";
+import Masterclass from "./pages/Masterclass";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +54,10 @@ const App = () => (
             <Route path="/industries" element={<Industries />} />
             <Route path="/company" element={<Company />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/courses/:courseId" element={<CourseDetail />} />
+            <Route path="/masterclass" element={<Masterclass />} />
+            <Route path="/responsive-engine" element={<ResponsiveEngine />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

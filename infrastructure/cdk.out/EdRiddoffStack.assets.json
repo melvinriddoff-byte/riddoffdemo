@@ -1,0 +1,21 @@
+{
+  "version": "53.0.0",
+  "files": {
+    "73941d78c075b7c36e8131bd850d76fc98e10e1f0569dd6933b4846d8dd90d33": {
+      "displayName": "ed-riddoff Template",
+      "source": {
+        "path": "EdRiddoffStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-ap-south-1-37e177c4": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-ap-south-1",
+          "objectKey": "73941d78c075b7c36e8131bd850d76fc98e10e1f0569dd6933b4846d8dd90d33.json",
+          "region": "ap-south-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-ap-south-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

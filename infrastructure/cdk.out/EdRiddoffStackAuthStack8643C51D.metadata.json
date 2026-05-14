@@ -1,0 +1,128 @@
+{
+  "/EdRiddoffStack/AuthStack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:50:27)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/AuthStack/UserPoolId": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "UserPoolId"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new AuthStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/AuthStack.js:72:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:50:27)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/AuthStack/UserPoolArn": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "UserPoolArn"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new AuthStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/AuthStack.js:77:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:50:27)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/AuthStack/ClientId": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ClientId"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new AuthStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/AuthStack.js:82:9)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:50:27)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/AuthStack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/AuthStack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/EdRiddoffStack/AuthStack/EdUserPool/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdUserPool795F5224"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new UserPool2 in aws-cdk-lib...",
+        "new AuthStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/AuthStack.js:42:25)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:50:27)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/AuthStack/EdAppClient/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "EdAppClient226025F4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new UserPoolClient2 in aws-cdk-lib...",
+        "new AuthStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/AuthStack.js:61:31)",
+        "new EdRiddoffStack (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/lib/stacks/EdRiddoffStack.js:50:27)",
+        "<anonymous> (/Users/melvinmaichle/Documents/RIDDOFF_Projects/riddoff_website/infrastructure/dist/bin/ed-riddoff.js:40:1)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/EdRiddoffStack/AuthStack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 9007199254740991 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}

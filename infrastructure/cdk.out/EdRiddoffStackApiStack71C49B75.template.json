@@ -1,0 +1,121 @@
+{
+ "Resources": {
+  "EdRiddoffApiAE418CD6": {
+   "Type": "AWS::ApiGatewayV2::Api",
+   "Properties": {
+    "CorsConfiguration": {
+     "AllowHeaders": [
+      "Content-Type",
+      "Authorization",
+      "X-Amz-Date"
+     ],
+     "AllowMethods": [
+      "GET",
+      "POST",
+      "PUT",
+      "DELETE"
+     ],
+     "AllowOrigins": [
+      "https://ed.riddoff.com",
+      "http://localhost:5173"
+     ]
+    },
+    "Description": "E-learning platform API",
+    "Name": "riddoff-ed-api",
+    "ProtocolType": "HTTP"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EdRiddoffStack/ApiStack/EdRiddoffApi/Resource"
+   }
+  },
+  "EdRiddoffApiDefaultStage2E219DB8": {
+   "Type": "AWS::ApiGatewayV2::Stage",
+   "Properties": {
+    "ApiId": {
+     "Ref": "EdRiddoffApiAE418CD6"
+    },
+    "AutoDeploy": true,
+    "StageName": "$default"
+   },
+   "Metadata": {
+    "aws:cdk:path": "EdRiddoffStack/ApiStack/EdRiddoffApi/DefaultStage/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/yWIzQ5EMBCAn8W9HTRx2KO47E3CA8gsJcOqRqcaEe++qT19PwpUkUOWYHCyHxb5pQ9cLWO/CAyuQ0sTsg54HgquN7MtLYlqNBExW8ZJx/HIHa32bD3fwmyDhtmlhyrgBVkyOyK5e8O0amj+/AH7eo2wfwAAAA=="
+   },
+   "Metadata": {
+    "aws:cdk:path": "EdRiddoffStack/ApiStack/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "ApiEndpoint": {
+   "Description": "HTTP API endpoint URL",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "EdRiddoffApiAE418CD6"
+      },
+      ".execute-api.ap-south-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": "RiddoffEdApiEndpoint"
+   }
+  },
+  "ApiId": {
+   "Description": "HTTP API ID",
+   "Value": {
+    "Ref": "EdRiddoffApiAE418CD6"
+   },
+   "Export": {
+    "Name": "RiddoffEdApiId"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

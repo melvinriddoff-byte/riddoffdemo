@@ -1,0 +1,21 @@
+{
+  "version": "53.0.0",
+  "files": {
+    "839910cc14308b67e51d87d3e27ffe45f1c4ecb95d68efeb56b6c44c80c1a34c": {
+      "displayName": "EdRiddoffStackDatabaseStack22F12154 Template",
+      "source": {
+        "path": "EdRiddoffStackDatabaseStack22F12154.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-ap-south-1-a19de68c": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-ap-south-1",
+          "objectKey": "839910cc14308b67e51d87d3e27ffe45f1c4ecb95d68efeb56b6c44c80c1a34c.json",
+          "region": "ap-south-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-ap-south-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

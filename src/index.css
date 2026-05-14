@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/branch');
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import url('https://api.fontshare.com/v2/css?f[]=melodrama@500&display=swap');
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@600&display=swap');
@@ -54,8 +54,8 @@
     --sidebar-border: 205 50% 22%;
     --sidebar-ring: 205 98% 24%;
 
-    --font-display: 'Branch', serif;
-    --font-body: 'Satoshi', sans-serif;
+    --font-display: 'Cabinet Grotesk', sans-serif;
+    --font-body: 'Cabinet Grotesk', sans-serif;
 
     --gradient-primary: linear-gradient(135deg, hsl(206, 97%, 15%), hsl(205, 98%, 24%));
     --gradient-accent: linear-gradient(135deg, hsl(205, 98%, 24%), hsl(205, 98%, 20%));
@@ -79,6 +79,109 @@
     font-family: var(--font-display);
   }
 }
+
+/* ─── Responsive Antigravity: ag-* class system ───────────────────────────── */
+
+/* Fluid container */
+.ag-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+/* 12-column auto grid */
+.ag-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+/* Base column spans (mobile-first, all full-width by default) */
+.ag-span-1  { grid-column: span 1 }
+.ag-span-2  { grid-column: span 2 }
+.ag-span-3  { grid-column: span 3 }
+.ag-span-4  { grid-column: span 4 }
+.ag-span-5  { grid-column: span 5 }
+.ag-span-6  { grid-column: span 6 }
+.ag-span-7  { grid-column: span 7 }
+.ag-span-8  { grid-column: span 8 }
+.ag-span-9  { grid-column: span 9 }
+.ag-span-10 { grid-column: span 10 }
+.ag-span-11 { grid-column: span 11 }
+.ag-span-12 { grid-column: span 12 }
+
+/* md (768px+) responsive overrides */
+@media (min-width: 768px) {
+  .ag-md\:span-1  { grid-column: span 1 }
+  .ag-md\:span-2  { grid-column: span 2 }
+  .ag-md\:span-3  { grid-column: span 3 }
+  .ag-md\:span-4  { grid-column: span 4 }
+  .ag-md\:span-5  { grid-column: span 5 }
+  .ag-md\:span-6  { grid-column: span 6 }
+  .ag-md\:span-7  { grid-column: span 7 }
+  .ag-md\:span-8  { grid-column: span 8 }
+  .ag-md\:span-9  { grid-column: span 9 }
+  .ag-md\:span-10 { grid-column: span 10 }
+  .ag-md\:span-11 { grid-column: span 11 }
+  .ag-md\:span-12 { grid-column: span 12 }
+}
+
+/* lg (1024px+) responsive overrides */
+@media (min-width: 1024px) {
+  .ag-lg\:span-1  { grid-column: span 1 }
+  .ag-lg\:span-2  { grid-column: span 2 }
+  .ag-lg\:span-3  { grid-column: span 3 }
+  .ag-lg\:span-4  { grid-column: span 4 }
+  .ag-lg\:span-5  { grid-column: span 5 }
+  .ag-lg\:span-6  { grid-column: span 6 }
+  .ag-lg\:span-7  { grid-column: span 7 }
+  .ag-lg\:span-8  { grid-column: span 8 }
+  .ag-lg\:span-9  { grid-column: span 9 }
+  .ag-lg\:span-10 { grid-column: span 10 }
+  .ag-lg\:span-11 { grid-column: span 11 }
+  .ag-lg\:span-12 { grid-column: span 12 }
+}
+
+/* xl (1280px+) responsive overrides */
+@media (min-width: 1280px) {
+  .ag-xl\:span-1  { grid-column: span 1 }
+  .ag-xl\:span-2  { grid-column: span 2 }
+  .ag-xl\:span-3  { grid-column: span 3 }
+  .ag-xl\:span-4  { grid-column: span 4 }
+  .ag-xl\:span-5  { grid-column: span 5 }
+  .ag-xl\:span-6  { grid-column: span 6 }
+  .ag-xl\:span-7  { grid-column: span 7 }
+  .ag-xl\:span-8  { grid-column: span 8 }
+  .ag-xl\:span-9  { grid-column: span 9 }
+  .ag-xl\:span-10 { grid-column: span 10 }
+  .ag-xl\:span-11 { grid-column: span 11 }
+  .ag-xl\:span-12 { grid-column: span 12 }
+}
+
+/* Visibility helpers */
+.ag-hide-xs              { display: none }
+@media (min-width: 480px)  { .ag-hide-xs  { display: revert } }
+
+.ag-hide-sm              { display: none }
+@media (min-width: 768px)  { .ag-hide-sm  { display: revert } }
+
+.ag-hide-md              { display: revert }
+@media (min-width: 768px)  { .ag-hide-md  { display: none  } }
+
+.ag-show-xs-only         { display: revert }
+@media (min-width: 480px)  { .ag-show-xs-only { display: none } }
+
+/* Lazy image — hidden until IntersectionObserver loads it */
+.ag-lazy {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.ag-lazy--loaded {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────── */
 
 @layer utilities {
   .text-gradient {
