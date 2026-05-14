@@ -32,7 +32,7 @@ const Navbar = () => {
   // All values interpolated continuously from scroll position — no binary state snap
   const rawTop      = useTransform(scrollY, [0, 80], [0, 14]);
   const rawRadius   = useTransform(scrollY, [0, 80], [0, 9999]);
-  const rawMaxW     = useTransform(scrollY, [0, 80], [1600, 860]);
+  const rawMaxW     = useTransform(scrollY, [0, 80], [9999, 900]);
   const rawPad      = useTransform(scrollY, [0, 80], [0, 6]);
   const rawGlassOp  = useTransform(scrollY, [0, 80], [0, 1]);
   const rawShadowOp = useTransform(scrollY, [0, 80], [0, 1]);
@@ -91,22 +91,22 @@ const Navbar = () => {
         />
 
         <motion.div
-          className="relative flex items-center justify-between gap-6 px-4"
+          className="relative flex items-center justify-between gap-4 px-4 sm:px-6 lg:px-10 w-full max-w-screen-2xl mx-auto"
           style={{ height }}
         >
-          <motion.div style={{ fontSize }}>
+          <motion.div style={{ fontSize }} className="flex-shrink-0">
             <Link to="/" className={`font-satoshi font-bold tracking-tight transition-colors duration-300 ${atTop ? "text-white" : "text-foreground"}`}>
               Riddoff
             </Link>
           </motion.div>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-7">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`font-satoshi text-sm font-medium transition-colors duration-200 relative group ${
+                className={`font-satoshi text-sm font-medium transition-colors duration-200 relative group whitespace-nowrap ${
                   atTop
                     ? location.pathname === link.href ? "text-white" : "text-white/65 hover:text-white"
                     : location.pathname === link.href ? "text-primary" : "text-muted-foreground hover:text-primary"
@@ -120,10 +120,10 @@ const Navbar = () => {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden lg:flex items-center flex-shrink-0">
             <Link
               to="/contact"
-              className={`font-satoshi px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+              className={`font-satoshi px-5 py-2 rounded-full text-sm font-semibold transition-colors whitespace-nowrap ${
                 atTop ? "bg-white text-[#012a4a] hover:bg-white/90" : "bg-primary text-white hover:bg-primary/90"
               }`}
             >
@@ -134,7 +134,7 @@ const Navbar = () => {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`md:hidden transition-colors ${atTop ? "text-white" : "text-foreground"}`}
+            className={`lg:hidden transition-colors ${atTop ? "text-white" : "text-foreground"}`}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -147,7 +147,7 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-background border-t border-border"
+              className="lg:hidden bg-background border-t border-border"
             >
               <div className="flex flex-col p-6 gap-4">
                 {navLinks.map((link) => (
